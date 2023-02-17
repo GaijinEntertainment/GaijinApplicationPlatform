@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Platform Newcomer's Guide": {
+    "message": "Начало работы",
+    "description": ""
+  },
+  "sidebar.docs.category.Platform Newcomer's Guide.link.generated-index.description": {
+    "message": "Добро пожаловать на страницу GaijinApplicationPlatform!",
+    "description": ""
+  },
+  "sidebar.docs.category.Dev Portal": {
+    "message": "Dev Portal",
+    "description": ""
+  },
+  "sidebar.docs.category.Dev Portal.link.generated-index.description": {
+    "message": "",
+    "description": ""
+  },
+  "sidebar.docs.link.Toolset Download": {
+    "message": "Скачать утилиты",
+    "description": "Скачать последнюю версию утилит"
+  }
+}
