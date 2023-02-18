@@ -23,7 +23,7 @@ Done. The project has been created and you are its owner and administrator.
 
 A project can have any number of administrators, one of them being its owner. Administrators have full permissions within the project except for being unable to remove the project owner.
 
-![Project Administrators](https://user-images.githubusercontent.com/3539889/180230138-3370929c-00ab-41cc-892f-cd346c7b0f79.png)
+![Project Administrators](/assets/project-admins.png)
 
 There are two ways to add a new administrator:
 
@@ -36,6 +36,8 @@ On the screenshot above, you can see the project owner John Smith and his assign
 
 Many users use nicknames in their accounts. Use the possibility of changing a user’s Display Name so as not to get confused about who is who.
 
+![Changing user’s display name](/assets/display-name.png)
+
 :::
 
 ## Service accounts
@@ -44,9 +46,9 @@ A service account is a special kind of account that can be used by a external ap
 
 You can't use service accounts to log in to the system in the usual way. However, you can assign roles and permissions for these accounts, just as you do for regular accounts.
 
-A list of service accounts can be found in the "Service accounts" section of the main menu. Press the **`Create service account`** button to create a new one.
+A list of service accounts can be found in the "Service accounts" section of the main menu. Press the **Create service account** button to create a new one.
 
-![Create service account](https://user-images.githubusercontent.com/3539889/180229742-4b0a9e22-f90d-4ef7-a3ad-3853b9a01712.png)
+![Create service account](/assets/service-account.png)
 
 When you create a new service account, you can specify a display name, comment, and its lifetime (e.g for one year). As a result of creating a service account, you will be issued a token that will allow you to make API requests on behalf of the account.
 

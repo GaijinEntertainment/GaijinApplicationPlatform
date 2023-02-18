@@ -19,13 +19,13 @@ Apart from that, the user adding system operates just like with the other projec
 
 We add the users who will prepare and deploy builds and assign necessary roles to them.
 
-![image2022-5-12_8-59-57](https://user-images.githubusercontent.com/8239624/169350300-c4e2d4a9-aacc-4832-83d5-77fcdaebdc89.png)
+![Service users](/assets/service-users.png)
 
 :::note
 
 Please note. When assigning a role, you can assign it for a time.
 That is to arrange for the extended permissions given to a user to be automatically revoked on the expiry of the indicated time.
 
-![image2022-5-12_9-8-29](https://user-images.githubusercontent.com/8239624/169350634-7b03e19a-d7f8-4120-8990-9c9f67064da3.png)
+![Service user role expiration](/assets/service-user-roles.png)
 
 :::

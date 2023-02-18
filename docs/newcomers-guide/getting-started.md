@@ -13,6 +13,7 @@ Before starting to use Gaijin Application Platform (GAP), please make sure that:
   If you don’t have any account, please create one.
 
   If you have already been playing one of Gaijin’s games, your gaming account should suffice, however, for security considerations, it would be better if you used a separate account for development purposes.
+
   :::note
 
   If your email service supports subaddressing, we recommend using that mechanism for creating multiple accounts linked to the same email address.
@@ -25,15 +26,15 @@ Before starting to use Gaijin Application Platform (GAP), please make sure that:
 
 - **TOTP two-factor authentication has been enabled for your account.**
 
-  Go to security settings[ https://login.gaijin.net/ru/profile/settings/security](https://login.gaijin.net/ru/profile/settings/security) and make sure that two-factor authentication has been enabled and configured.
+  Go to [security settings](https://login.gaijin.net/ru/profile/settings/security) and make sure that two-factor authentication has been enabled and configured.
 
-  ![TOTP Enabled](https://user-images.githubusercontent.com/8239624/169321310-fa2ecf9b-e303-473c-8157-c58c620ba4b1.png)
+  ![TOTP Enabled](/assets/two-factor.png)
 
 ## Getting a Developer License
 
 To get a **Developer License Activation Code** contact with Gaijin directly.
 
-You can activate your License here:[ https://store.gaijin.net/activate.php](https://store.gaijin.net/activate.php)
+You can activate your License here: [https://store.gaijin.net/activate.php](https://store.gaijin.net/activate.php)
 
 :::caution
 
