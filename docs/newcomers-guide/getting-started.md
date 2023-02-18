@@ -28,7 +28,7 @@ Before starting to use Gaijin Application Platform (GAP), please make sure that:
 
   Go to [security settings](https://login.gaijin.net/ru/profile/settings/security) and make sure that two-factor authentication has been enabled and configured.
 
-  ![TOTP Enabled](/assets/two-factor.png)
+  ![TOTP Enabled](./assets/two-factor.png)
 
 ## Getting a Developer License
 

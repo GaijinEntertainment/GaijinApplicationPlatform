@@ -127,7 +127,7 @@ To make it clearer, let’s create a sample schema. In future, you can build upo
 3. Press the **Import** button
    The application schema should display in the form of a table.
 
-   ![Application schema](/assets/app-schema.png)
+   ![Application schema](./assets/app-schema.png)
 
 4. Save changes (number 18 means that we have made 18 different edits to the application scheme)
 
@@ -153,7 +153,7 @@ Permissions do not function on their own. An application can request permissions
 
 Now you can return to the **Users** section and see that our only user may be assigned all three roles. Let’s make them, for instance, a `moderator` and a `lead support`.
 
-![Application users](/assets/app-users.png)
+![Application users](./assets/app-users.png)
 
 There is also a possibility of adding other users or inviting them to manage the application in the same way it was done in the case of project administrator list management.
 
@@ -161,7 +161,7 @@ There is also a possibility of adding other users or inviting them to manage the
 
 To make authorized requests to GAP API in the name of the application, you need to generate an API key. It can be done at any time in the **API keys** section.
 
-![Application API keys](/assets/app-api-keys.png)
+![Application API keys](./assets/app-api-keys.png)
 
 You can have a maximum of two active tokens at the same time. Two tokens are necessary in case you need to reissue a token, for example, because the current one was compromised. In this case you can issue a new token, replace the current token with the new one and then remove the previous token, thus making it invalid.
 

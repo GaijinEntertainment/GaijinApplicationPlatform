@@ -19,13 +19,13 @@ Apart from that, the user adding system operates just like with the other projec
 
 We add the users who will prepare and deploy builds and assign necessary roles to them.
 
-![Service users](/assets/service-users.png)
+![Service users](./assets/service-users.png)
 
 :::note
 
 Please note. When assigning a role, you can assign it for a time.
 That is to arrange for the extended permissions given to a user to be automatically revoked on the expiry of the indicated time.
 
-![Service user role expiration](/assets/service-user-roles.png)
+![Service user role expiration](./assets/service-user-roles.png)
 
 :::
