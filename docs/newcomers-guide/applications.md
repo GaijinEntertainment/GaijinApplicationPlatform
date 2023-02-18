@@ -7,13 +7,13 @@ sidebar_position: 3
 
 As soon as a project is created, it consists of one application of the same name.
 
-Application - a logical entity, allowing for breaking a project into separate subsystems, each of whom can have its own permissions, its roles, and its own administrators. It is usually enough for a small project to have just one application. Additional applications within a project can be created at any time. Each application is fully independent and in no way affects the other applications.
+Application – a logical entity, allowing for breaking a project into separate subsystems, each of whom can have its own permissions, its roles, and its own administrators. It is usually enough for a small project to have just one application. Additional applications within a project can be created at any time. Each application is fully independent and in no way affects the other applications.
 
 In which cases will it be convenient to have several applications? If a project consists of several subsystems that are quite independent. For example, a game itself, which may require moderators, community managers or players with the permission to temporarily mute other players. A marketplace may stand alone, having a completely different range of permissions and roles. It will require permissions to manage transactions, refund, modify players’ inventory and so on.
 
 ## Application roles and permissions
 
-Open the **Users** section. There is a single user at the moment - it’s you as the project owner. You don’t have any roles or permissions assigned. It’s because no permissions schema has been defined in the application so far.
+Open the **Users** section. There is a single user at the moment – it’s you as the project owner. You don’t have any roles or permissions assigned. It’s because no permissions schema has been defined in the application so far.
 
 To make it clearer, let’s create a sample schema. In future, you can build upon it or you can create your own application schema from scratch. Let’s return to the main page of the project and go to the **Roles and permissions** section. There’s also nothing here at the moment. Let’s import the ready-made import schema.
 
@@ -130,11 +130,12 @@ To make it clearer, let’s create a sample schema. In future, you can build upo
    ![Application schema](/assets/app-schema.png)
 
 4. Save changes (number 18 means that we have made 18 different edits to the application scheme)
-   :::tip
 
-   You could create all permissions and roles manually, one by one, but it is much faster to import a ready-made schema.
+:::tip
 
-   :::
+You could create all permissions and roles manually, one by one, but it is much faster to import a ready-made schema.
+
+:::
 
 The first column shows the list of permissions. In order to take any non-standard action in the game, the user should have the appropriate permission. Try to assign such names to permissions that will reflect the meaning of the permission assigned.
 
