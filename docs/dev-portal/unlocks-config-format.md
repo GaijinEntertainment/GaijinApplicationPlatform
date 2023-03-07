@@ -1,8 +1,9 @@
 ---
-title: Players Achievements
+title: Unlocks config format
 sidebar_position: 3
 ---
 
+# Players Achievements
 Most modern game use players achievements. The achievement can be simple, like killing 10 zombies, or more complex, tracking changes of player level, player abilities, battle pass level, etc. In our services, player achievements are implemented as unlocks. [Player statistics](stats-config-format) are used to open an unlock.
 Our services make working with achievements very flexible and open up huge opportunities.
 
