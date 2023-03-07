@@ -13,7 +13,7 @@ You can read about the interaction between the game and the statistics server he
 
 ## Stats format
 
-To use and store statistics you need to add stats description to [stats config](gui-description), and [deploy config](gui-description) to the stats server.
+To use and store statistics you need to add stats description to [stats config](gui-description#stats-config-editing), and [deploy config](gui-description#deploy-configs) to the stats server.
 **Stat description format**:
 
 ```json
@@ -49,7 +49,7 @@ To use and store statistics you need to add stats description to [stats config](
 - `window` (_float_) - coefficient for calculation the moving average, must be > 0. Works only for type = AVGRATE. See [moving average calculation](#moving-average).
 - `onlyIncrement` (_bool_) - if = true, the value of the stat cant decrease.
 - `leaderboard` (_bool_) - determines whether the stat should be displayed in the leaderboard.
-- `showForAll` (_bool_) - determines whether the stat should be visible to another user. To request another user statistics use [AnoGetStats action](userstat-api)
+- `showForAll` (_bool_) - determines whether the stat should be visible to another user. To request another user statistics use [AnoGetStats action](userstat-api#get-another-user-unlocks)
 - `allowChangeFromClient` (_bool_) - determines the possibility of changing stat by the client.
   :::note
   use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](userstat-api#clnchangestats)
