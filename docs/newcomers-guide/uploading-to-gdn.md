@@ -1,6 +1,5 @@
 ---
 title: Uploading a Project to GDN
-sidebar_position: 5
 ---
 
 # Uploading a Project to Gaijin Distribution Network (GDN)

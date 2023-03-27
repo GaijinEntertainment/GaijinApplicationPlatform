@@ -1,6 +1,5 @@
 ---
 title: Projects
-sidebar_position: 2
 ---
 
 ## New Project Registration
@@ -33,27 +32,6 @@ There are two ways to add a new administrator:
 On the screenshot above, you can see the project owner John Smith and his assigned administrator Alice Fox. Further above, in the “Invite” section, you can see an invitation link and a request from Bob Kinley waiting for the administrators’ approval.
 
 :::tip
-
 Many users use nicknames in their accounts. Use the possibility of changing a user’s Display Name so as not to get confused about who is who.
-
 ![Changing user’s display name](./assets/display-name.png)
-
-:::
-
-## Service accounts
-
-A service account is a special kind of account that can be used by a external applications or services to manage resources within the project.
-
-You can't use service accounts to log in to the system in the usual way. However, you can assign roles and permissions for these accounts, just as you do for regular accounts.
-
-A list of service accounts can be found in the "Service accounts" section of the main menu. Press the **Create service account** button to create a new one.
-
-![Create service account](./assets/service-account.png)
-
-When you create a new service account, you can specify a display name, comment, and its lifetime (e.g for one year). As a result of creating a service account, you will be issued a token that will allow you to make API requests on behalf of the account.
-
-:::caution
-
-For your protection, you should never share your token with anyone. If you have lost your token or it has been compromised, you can generate a new token for the account.
-
 :::

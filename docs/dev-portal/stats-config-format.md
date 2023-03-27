@@ -1,6 +1,5 @@
 ---
 title: Stats config format
-sidebar_position: 2
 ---
 
 # Player statistics
