@@ -1,6 +1,5 @@
 ---
 title: Userstat API
-sidebar_position: 4
 ---
 
 Userstat API uses [json-rpc protocol](https://www.jsonrpc.org/specification).

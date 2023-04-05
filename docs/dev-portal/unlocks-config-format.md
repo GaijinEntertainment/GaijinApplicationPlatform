@@ -1,6 +1,5 @@
 ---
 title: Players Achievements
-sidebar_position: 3
 ---
 
 Most modern game use players achievements. The achievement can be simple, like killing 10 zombies, or more complex, tracking changes of player level, player abilities, battle pass level, etc. In our services, player achievements are implemented as unlocks. [Player statistics](stats-config-format) are used to open an unlock.

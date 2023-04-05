@@ -36,7 +36,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
-          sidebarCollapsed: false,
+          sidebarCollapsed: true,
           editLocalizedFiles: true,
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },

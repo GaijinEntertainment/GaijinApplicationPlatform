@@ -31,3 +31,12 @@
   margin-right: var(--ifm-navbar-padding-horizontal);
   background: #0D9488;
 }
+
+.navbar__toggle {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.navbar-sidebar__brand {
+  padding-left: 0;
+}

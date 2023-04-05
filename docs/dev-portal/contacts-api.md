@@ -1,6 +1,5 @@
 ---
 title: Contacts API
-sidebar_position: 6
 ---
 
 Contact API uses [json-rpc protocol](https://www.jsonrpc.org/specification).

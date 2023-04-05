@@ -1,6 +1,5 @@
 ---
 title: GUI description
-sidebar_position: 1
 ---
 
 ## User stats tab {#stats-configs}

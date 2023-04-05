@@ -1,6 +1,5 @@
 ---
 title: Начало работы
-sidebar_position: 1
 slug: /
 ---
 
