@@ -19,6 +19,10 @@
   --ifm-color-primary-lightest: #22e7d1;
 }
 
+article p {
+  white-space: pre-wrap;
+}
+
 .navbar {
   padding: 0 var(--ifm-navbar-padding-horizontal) 0 0;
 }
