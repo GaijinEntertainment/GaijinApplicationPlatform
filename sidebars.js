@@ -61,6 +61,7 @@ const sidebars = {
         'central/logging',
       ],
     },
+    'how-to-contribute',
     {
       type: 'link',
       label: 'Toolset Download',
