@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-[Gaijin Central](https://central-admin.gaijin.net/) is a comprehensive portal that allows developers to easily manage their applications.
+[Gaijin Central](https://central-admin.gaijin.net/) is a comprehensive portal that allows developers to easily manage their applications, users and services.
 
 ## Authorization
 

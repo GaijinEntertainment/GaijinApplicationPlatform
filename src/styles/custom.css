@@ -23,6 +23,10 @@ article p {
   white-space: pre-wrap;
 }
 
+article hr {
+  display: none;
+}
+
 .navbar {
   padding: 0 var(--ifm-navbar-padding-horizontal) 0 0;
 }

@@ -2,7 +2,9 @@
 title: Services
 ---
 
-Gaijin Application Platform offers a range of services allowing the applications in development to use services such as content delivery, matchmaking, leaderboards, inventory, bug reporting, forums and so on.
+Gaijin Application Platform allows administrators to expand the functionality of their applications by connecting additional services, such as content delivery, matchmaking, leaderboards, inventory, bug reporting, forums and so on.
+
+---
 
 To connect a service to the project, go to Services in the [Side navigation](getting-started.md#side-navigation). This page contains a list of available services for your project, as well as a list of already connected services. The list of available services will expand over time.
 

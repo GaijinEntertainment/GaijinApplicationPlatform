@@ -8,6 +8,8 @@ Project is the top-level entity for Gaijin Central. Key features of the project:
 - Ability to connect the necessary [services](services) depending on your needs
 - Allows flexible management of access for [administrators](project-administrators) to applications and services
 
+---
+
 ![Project menu](./assets/project-page.png)
 
 ## Creating a new project

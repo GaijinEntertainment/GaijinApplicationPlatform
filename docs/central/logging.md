@@ -2,7 +2,9 @@
 title: Logging
 ---
 
-Every significant action in Central performed by the user is recorded in the event log.
+In Central every significant action performed by the user is recorded in the event log. This means that any action that has an impact on the system or application, such as modifying access rights in the application, creating a new API key or service account, is logged and stored for future reference. It is designed to help administrators monitor and analyze user behavior and ensure compliance with security policies.
+
+---
 
 On the most important pages of Central there are **Latest activity** blocks with a table of 30 recent changes. At the bottom of the table there is a **Show more** button for going to a more detailed log page. This block is presented on four pages:
 

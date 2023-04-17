@@ -2,7 +2,9 @@
 title: API Keys
 ---
 
-To make authorized requests to GAP API in the name of the application, you need to generate an API key. It can be done at any time in the **API keys** section.
+API keys are essentially unique identifiers that are associated with a particular application, and are used to make authorized requests to Gaijin Application Platform API. Caution should be exercised when storing API keys, as failure to securely manage them can result in a compromise of your application's security and potential unauthorized access to the API.
+
+---
 
 ![Application API keys](./assets/app-api-keys.png)
 

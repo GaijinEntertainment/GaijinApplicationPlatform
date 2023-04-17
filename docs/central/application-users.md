@@ -2,7 +2,7 @@
 title: Users management
 ---
 
-This page provides tools that allow you to manage the list of users in the application – adding/removing users, assigning roles, as well as importing and exporting records.
+This page serves as a powerful tool for user management, allowing administrators to effectively manage their users in the application. It includes a paginated list of users with a filtering section that allows the administrator to search for users by project, role, or user ID. In addition, there is the ability to add or remove users, as well as the flexibility to manage each user's roles. The page also allows administrators to import and export records.
 
 ## Filtering list of users
 
@@ -81,9 +81,13 @@ If the selected user already exists in the list of users of this application, an
 
 ## Export/Import users
 
-![Export](./assets/app-users-export.png)
+To make it easy for the administrator to export some (or all) users from one application to another, there is an export option.
 
-In order to export a part of users from one application to another, you should select the necessary users using checkboxes.
+---
+
+To export records, select the desired users using the checkboxes.
+
+![Export](./assets/app-users-export.png)
 
 :::note
 You can pick users from more than one page.
