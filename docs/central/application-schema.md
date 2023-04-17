@@ -2,7 +2,7 @@
 title: Roles and permissions
 ---
 
-The page allows you to manage roles and permissions within the application (i.e. changing application schema). A permission is an atomic unit of access to an application. A role is a set of permissions that are assigned to a user and define his access rights within the application.
+The page allows you to manage roles and permissions within the application (i.e. changing application schema). A permission is an atomic unit of access to an application. Whereas a role is a set of permissions that are assigned to a user and define his access rights within the application.
 
 ## Application schema
 

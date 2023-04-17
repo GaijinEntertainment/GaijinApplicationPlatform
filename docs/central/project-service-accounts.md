@@ -4,6 +4,8 @@ title: Service accounts
 
 A service account is a special kind of account that can be used by a external applications or services to manage resources within the project. You can't use service accounts to log in to the system in the usual way. However, you can assign roles for these accounts, just as you do for regular users.
 
+---
+
 ![List of service accounts](./assets/service-account.png)
 
 ## Creating a service account
