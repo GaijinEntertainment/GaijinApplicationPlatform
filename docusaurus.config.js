@@ -28,8 +28,8 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      'docusaurus-preset-openapi',
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         blog: false,
         docs: {
@@ -40,11 +40,26 @@ const config = {
           editLocalizedFiles: true,
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
+        api: {
+          path: 'openapi/sample.yaml',
+          routeBasePath: 'api/sample',
+        },
         theme: {
           customCss: [require.resolve('./src/styles/custom.css')],
         },
       }),
     ],
+  ],
+
+  plugins: [
+    // [
+    //   'docusaurus-plugin-openapi',
+    //   {
+    //     id: 'awesome-service-api',
+    //     path: 'openapi/awesome-service.yaml',
+    //     routeBasePath: 'api/awesome-service',
+    //   },
+    // ],
   ],
 
   themeConfig:
@@ -57,6 +72,22 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {
+            type: 'doc',
+            docId: 'newcomers-guide/getting-started',
+            position: 'left',
+            label: 'Docs',
+          },
+          // {
+          //   label: 'API',
+          //   position: 'left',
+          //   items: [
+          //     {
+          //       to: 'api/awesome-service',
+          //       label: 'Awesome Service API',
+          //     },
+          //   ],
+          // },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -71,6 +102,10 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      api: {
+        authPersistance: 'localStorage',
+        serverVariablesPersistance: 'localStorage',
       },
     }),
 };

@@ -53,6 +53,79 @@ yarn run start --locale ru
 
 :::
 
+### Создание документации на основе OpenAPI
+
+Данный портал позволяет генерировать разделы документации на основе спецификации OpenAPI. Для того чтобы интегрировать OpenAPI выполните следующие шаги:
+
+1. Положите файл спецификации в директорию `openapi` в корне данного репозитория:
+
+   ```
+   ├─ ...
+   ├─ docs
+   ├─ i18n
+   ├─ openapi
+   │  ├─ ...
+   │  └─ awesome-service.yaml   <--
+   ```
+
+   Поддерживаются оба формата файлов спецификации OpenAPI – YAML и JSON.
+
+2. Настройте генерацию страниц документации на основе данного файла, дополнив файл конфигурации `docusaurus.config.js` следующим образом:
+
+   ```js
+   plugins: [
+     // ...
+     [
+       'docusaurus-plugin-openapi',
+       {
+         id: 'awesome-service-api',
+         path: 'openapi/awesome-service.yaml',
+         routeBasePath: 'api/awesome-service',
+       },
+     ],
+   ],
+   ```
+
+   В данном примере документация будет сгенерирована по адресу `/api/awesome-service`.
+
+3. Чтобы разместить ссылку на созданный раздел документации в шапке портала, необходимо добавить следующие строки в файле `docusaurus.config.js`:
+
+   ```js
+   themeConfig: {
+     // ...
+     navbar: {
+       // ...
+       items: [
+         // ...
+         {
+           label: 'API',
+           position: 'left',
+           items: [
+             // ...
+             {
+               to: 'api/awesome-service',
+               label: 'Awesome Service API',
+             },
+           ],
+         },
+       ],
+     },
+   },
+   ```
+
+4. Для размещения ссылки на OpenAPI спецификацию внутри сайдбара общего портала документации, следует дополнить файл `sidebars.js` следующим образом:
+   ```js
+   docs: [
+     // ...
+     'awesome-service/overview',
+     {
+       type: 'link',
+       label: 'API reference',
+       href: '/api/awesome-service',
+     },
+   ],
+   ```
+
 ### Развертывание сайта на GitHub Pages
 
 Репозиторий GAP использует [GitHub Actions](https://docs.github.com/en/actions), чтобы разворачивать сайт на основе [GitHub Pages](https://docs.github.com/en/pages).

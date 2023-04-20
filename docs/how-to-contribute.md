@@ -53,6 +53,79 @@ yarn run start --locale ru
 
 :::
 
+### Generating OpenAPI documentation
+
+This portal allows you to generate documentation sections based on the OpenAPI specification. In order to integrate OpenAPI follow these steps:
+
+1. Put the specification file in the `openapi` directory at the root of this repository:
+
+   ```
+   ├─ ...
+   ├─ docs
+   ├─ i18n
+   ├─ openapi
+   │  ├─ ...
+   │  └─ awesome-service.yaml   <--
+   ```
+
+   Both YAML and JSON file formats of the OpenAPI specification are supported.
+
+2. Set up the generation of documentation pages based on this file by adding the `docusaurus.config.js` configuration file as follows:
+
+   ```js
+   plugins: [
+     // ...
+     [
+       'docusaurus-plugin-openapi',
+       {
+         id: 'awesome-service-api',
+         path: 'openapi/awesome-service.yaml',
+         routeBasePath: 'api/awesome-service',
+       },
+     ],
+   ],
+   ```
+
+   In this example, the documentation will be generated at `/api/awesome-service`.
+
+3. To place a link to the generated documentation section in the portal's header, you need to add the following lines to the `docusaurus.config.js` file:
+
+   ```js
+   themeConfig: {
+     // ...
+     navbar: {
+       // ...
+       items: [
+         // ...
+         {
+           label: 'API',
+           position: 'left',
+           items: [
+             // ...
+             {
+               to: 'api/awesome-service',
+               label: 'Awesome Service API',
+             },
+           ],
+         },
+       ],
+     },
+   },
+   ```
+
+4. To place a link to the OpenAPI specification inside the sidebar of the common documentation portal, add the `sidebars.js` file as follows:
+   ```js
+   docs: [
+     // ...
+     'awesome-service/overview',
+     {
+       type: 'link',
+       label: 'API reference',
+       href: '/api/awesome-service',
+     },
+   ],
+   ```
+
 ### Deploying to GitHub Pages
 
 GAP repository uses the [GitHub Pages](https://docs.github.com/en/pages) experience with [GitHub Actions](https://docs.github.com/en/actions) to deploy the website.
