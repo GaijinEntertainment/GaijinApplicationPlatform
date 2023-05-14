@@ -1,6 +1,6 @@
 ---
 title: Leaderboard API
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 Leaderboard API uses [json-rpc protocol](https://www.jsonrpc.org/specification). Leaderboard in another words is a rating list.

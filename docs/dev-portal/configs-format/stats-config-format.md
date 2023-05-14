@@ -1,16 +1,17 @@
 ---
 title: Stats config format
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Player statistics
 
 Player statistics are an important part of all modern games. Most game mechanics, such as character leveling and abilities, achievements, leaderboards, player rewarding, etc use player statistics.
-This article describes the format of stats config, also provides examples of different stats. You can read about the interaction between the game and the statistics server here: [Userstat Api](userstat-api).
+This article describes the format of stats config, also provides examples of different stats.  
+You can read about the interaction between the game and the statistics server here: [Userstat Api](./../services-api/userstat-api).
 
 ## Stat format
 
-To use and store statistics you need to add stats description to [stats config](gui-description#stats-config-editing), and [deploy config](gui-description#deploy-configs) to the stats server.
+To use and store statistics you need to add stats description to [stats config](./../gui/configs-management#multi-element-config), and [deploy configs](./../gui/configs-management#deploy-configs) to services.
 
 **Stat description format**:
 
@@ -18,6 +19,7 @@ To use and store statistics you need to add stats description to [stats config](
 {
   "name": "kills_death_rating",                 // required
   "type": "FLOAT",                              // required
+
   "minValue": 0,                                // optional
   "maxValue": 1,                                // optional
   "defValue": 0                                 // optional, default = 0
@@ -49,7 +51,7 @@ To use and store statistics you need to add stats description to [stats config](
 - `window` (_float_) - coefficient for calculation the moving average, must be > 0. Works only for type = AVGRATE. See [moving average calculation](#moving-average).
 - `onlyIncrement` (_bool_) - if = true, the value of the stat can't decrease.
 - `leaderboard` (_bool_) - determines whether the stat should be displayed in the leaderboard.
-- `showForAll` (_bool_) - determines whether the stat should be visible to another user. To request another user statistics use [AnoGetStats action](userstat-api#anogetstats)
+- `showForAll` (_bool_) - determines whether the stat should be visible to another user. To request another user statistics use [AnoGetStats action](./../services-api/userstat-api#anogetstats)
 - `allowChangeFromClient` (_bool_) - determines the possibility of changing stat by the client.
   :::caution
   use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](userstat-api#clnchangestats)
@@ -81,11 +83,11 @@ Stats in the condition are written as: `s.stat_name`. See [calculable stat examp
 
 `battles_count` and `score` - stat names.
 
-## Stats example
+## Stat examples
 
 ### Simple stats
 
-Simple stat used to store a player game statistics. Can be used to calculate other stats and unlocks [player achievements](unlocks-config-format).
+Simple stat used to store a player game statistics. Can be used to calculate other stats and [unlocks](unlocks-config-format).
 
 `battle_level` - player level in the battle, type int, can be decrease, not written to leaderboard.
 
@@ -197,3 +199,8 @@ Below are descriptions of the stats: `lifes_count`, `total_score` and calculable
   "condition" : "s.lifes_count ? s.total_score/s.lifes_count.tofloat() : 0"
 }
 ```
+
+### Special stats
+All special stats starts with `__`, please don't use this prefix for game specific stats.
+#### Leaderboard group
+`__leaderboardGroup` - WIP

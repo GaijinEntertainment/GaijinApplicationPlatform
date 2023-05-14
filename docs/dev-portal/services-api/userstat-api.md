@@ -1,6 +1,6 @@
 ---
 title: Userstat API
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 Userstat API uses [json-rpc protocol](https://www.jsonrpc.org/specification).
@@ -83,6 +83,7 @@ For the stats, calculating as [moving average](stats-config-format#moving-averag
 }
 ```
 
+#### Sessional stats
 For the sessional stats(e.g. kills per battle) the `$sessionId` parameter is used:
 
 ```json
@@ -317,7 +318,7 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
 </details>
 
 <details>
-<summary>Response on request with "params": <b>{ "stats": ["level"] }</b>:</summary>
+<summary>Response on request with "params" <b>{`{"stats": ["level"]}`}</b>:</summary>
 
 ```json
 {
@@ -501,7 +502,18 @@ $filter - parameter defining response filter. This is an aggregation of filter f
 }
 ```
 </details>
-  
+
+
+### AnoGetStats
+
+WIP
+
+
+### AnoGetUnlocks
+
+WIP
+
+
 ### GrantRewards
 
 Method for the awarding user by unlock.
