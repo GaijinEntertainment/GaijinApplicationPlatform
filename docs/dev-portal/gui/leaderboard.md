@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Leaderboard
 To see a leaderboard select appropriate menu item. Then select filter items:  
-![Single config edit](./images/lb-filters.png)
+![Leaderboard filters](./images/lb-filters.png)
 
 * table - leaderboard for specific table [more info](./../config-format/tables-config-format)
 * mode - leaderboard for specific mode [more info](./../config-format/modes-config-format)
@@ -21,10 +21,10 @@ To see a leaderboard select appropriate menu item. Then select filter items:
 * count - the number of users on the leaderboard page.
 
 After select filter press button `Get Leaderboard` to see the Leaderboard:  
-![Single config edit](./images/lb-get.png)
+![Get Leaderboard](./images/lb-get.png)
 
 To sorting the Leaderboard by various stat just click on column header:  
-![Single config edit](./images/lb-sorting.png)
+![Sort Leaderboard](./images/lb-sorting.png)
 
 Use the navigation buttons to move to the next or previous page of the Leaderboard:  
-![Single config edit](./images/lb-pages.png)
+![Leaderboard pages](./images/lb-pages.png)
