@@ -51,7 +51,11 @@ To use and store statistics you need to add stats description to [stats config](
 - `window` (_float_) - coefficient for calculation the moving average, must be > 0. Works only for type = AVGRATE. See [moving average calculation](#moving-average).
 - `onlyIncrement` (_bool_) - if = true, the value of the stat can't decrease.
 - `leaderboard` (_bool_) - determines whether the stat should be displayed in the leaderboard.
-- `showForAll` (_bool_) - determines whether the stat should be visible to another user. To request another user statistics use [AnoGetStats action](./../services-api/userstat-api#anogetstats)
+- `showForAll` (_bool_) - determines whether the stat should be visible to another user.
+  :::note
+  To request another user statistics use [AnoGetStats action](./../services-api/userstat-api#anogetstats).  
+  Stats will be returned only for **public** [tables](tables-config-format#table-format) and [modes](modes-config-format#mode-format).
+  :::
 - `allowChangeFromClient` (_bool_) - determines the possibility of changing stat by the client.
   :::caution
   use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](userstat-api#clnchangestats)
