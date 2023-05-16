@@ -43,9 +43,9 @@ To use and store an unlock you need to add its description to [unlocks config](.
 
 - `name` (_string_) - name of the unlock, must be unique.
 - `type` (_string_) - type of the unlock, possible values:
-  - "NORMAL" - simple unlock. [example](#simple-unlocks)
-  - "SESSIONAL" - unlock progress is calculated using statistics of a single session. This type of unlock opens only _once_. [example](#sessional-unlocks).
-  - "MULTISESSIONAL" - unlock works as SESSIONAL but it can be opened _multiple_ times. [example](#multisessional-unlocks).
+  - "NORMAL" - simple unlock. [Example](#simple-unlocks)
+  - "SESSIONAL" - unlock progress is calculated using statistics of a single session. This type of unlock opens only _once_. [Example](#sessional-unlocks).
+  - "MULTISESSIONAL" - unlock works as SESSIONAL but it can be opened _multiple_ times. [Example](#multisessional-unlocks).
 - `table` (_string_) - The name of the table for calculating the unlock condition. See [Statistic tables](tables-config-format).
 - `condition` (_string_) - a [quirrel](https://quirrel.io/doc/index.html) language expression used to calculate the unlock progress. The format is equivalent to [stats condition](stats-config-format#condition-format).
 - `stages` (_json array_) - array of unlock stages. An unlock must have at least one stage but may have more. See [stage description format](#stages-format).
@@ -53,17 +53,17 @@ To use and store an unlock you need to add its description to [unlocks config](.
 #### Optional fields:
 
 - `mode` - the name of the game mode for calculating the unlock condition. See [Statistic modes](modes-config-format).
-- `hidden` (_bool_) - if = true, hide unlock from user. Hidden unlocks used like helper to implement some complex mechanics. [examples](#hidden-unlocks).
-- `periodic` (_bool_) - if = true, the unlock stages are considered cyclic. [example](#periodic-unlocks).
-- `startStageLoop` (_int_) - the number of the stage at which the cycle will begin. Works only if periodic field value is set to true. [example](#progressive-player-level).
-- `autoRewarding` - if = true, the rewards of the unlock stage will be received automatically when the unlock stage opens. [example](#auto-rewarding-unlocks) Otherwise you need to use userstat api to [reward unlock](./../services-api/userstat-api#grantrewards).
-- `dynamicUnlock` (_bool_) - if = true, the unlock progress and stage will be decreased when the result of condition expression decreases. [example](#dynamic-unlocks).
-- `dynamicProgress` (_bool_) - if = true, only the unlock progress will be decreased when the result of condition expression decreases, the unlock stage remains unchanged. [example](#dynamic-progress).
-- `dynamicRewards` (_bool_) - if = true, the unlock awards will be given at each opening of the unlock stage. Works only if dynamicUnlock is true. If the unlock stage was awarded, then decreased and then increased again, and that stage has to be rewarded again, set this flag to true. [example](#dynamic-rewards).
+- `hidden` (_bool_) - if = true, hide unlock from user. Hidden unlocks used like helper to implement some complex mechanics. [Examples](#hidden-unlocks).
+- `periodic` (_bool_) - if = true, the unlock stages are considered cyclic. [Example](#periodic-unlocks).
+- `startStageLoop` (_int_) - the number of the stage at which the cycle will begin. Works only if periodic field value is set to true. [Example](#progressive-player-level).
+- `autoRewarding` - if = true, the rewards of the unlock stage will be received automatically when the unlock stage opens. [Example](#auto-rewarding-unlocks) Otherwise you need to use userstat api to [reward unlock](./../services-api/userstat-api#grantrewards).
+- `dynamicUnlock` (_bool_) - if = true, the unlock progress and stage will be decreased when the result of condition expression decreases. [Example](#dynamic-unlocks).
+- `dynamicProgress` (_bool_) - if = true, only the unlock progress will be decreased when the result of condition expression decreases, the unlock stage remains unchanged. [Example](#dynamic-progress).
+- `dynamicRewards` (_bool_) - if = true, the unlock awards will be given at each opening of the unlock stage. Works only if dynamicUnlock is true. If the unlock stage was awarded, then decreased and then increased again, and that stage has to be rewarded again, set this flag to true. [Example](#dynamic-rewards).
 - `showForAll` (_bool_) - determines whether the unlock should be visible to another user. To request another user unlocks use [AnoGetUnlocks action](./../services-api/userstat-api#anogetunlocks).
 - `requirement` (_string_) - the unlocks necessary for given unlock awards. If the player does not open the required unlocks, the rewards will not be given. [examples](#unlocks-with-requirement)
   Requirement format: `"unlock1 & unlock2"` if player does not open unlock1 and unlock2, the rewards will not be given.
-- `meta` (_json object_) - field for custom game data. Can be used to pass arbitrary data to the game client. The value must be a json object. [example](#using-meta).
+- `meta` (_json object_) - field for custom game data. Can be used to pass arbitrary data to the game client. The value must be a json object. [Example](#using-meta).
 
 ### Stages format
 
