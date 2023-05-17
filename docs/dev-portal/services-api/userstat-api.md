@@ -82,6 +82,7 @@ For the stats, calculating as [moving average](stats-config-format#moving-averag
 }
 ```
 
+#### Sessional stats
 For the sessional stats(e.g. kills per battle) the `$sessionId` parameter is used:
 
 ```json
@@ -289,7 +290,8 @@ Method to request user statistics.
 
 The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If param value is `{}`, `[]`, `null` or absent - filter is empty, so all user stats for this filter type will be sent. If some values is set, the only suitable stats will be added to the response.
 
-Response on request without "params" **(without filters)**:
+<details>
+<summary>Response on request without "params" <b>(without filters)</b>:</summary>
 
 ```json
 {
@@ -297,11 +299,9 @@ Response on request without "params" **(without filters)**:
   "id": "ecdf8a03-a1bf-43f4-96eb-06550cdb63f9",
   "result": {
     "stats": {
-      // table name
-      "global": {
+      "global": { // table name
         "$index": 1,
-        // mode name
-        "default": {
+        "default": { // mode name
           // stats name and value
           "level": 189,
           "gems": 94,
@@ -314,8 +314,10 @@ Response on request without "params" **(without filters)**:
   }
 }
 ```
+</details>
 
-Response on request with "params" `{ "stats": ["level"] }`:
+<details>
+<summary>Response on request with "params" <b>{`{"stats": ["level"]}`}</b>:</summary>
 
 ```json
 {
@@ -323,11 +325,9 @@ Response on request with "params" `{ "stats": ["level"] }`:
   "id": "ecdf8a03-a1bf-43f4-96eb-06550cdb63f9",
   "result": {
     "stats": {
-      // table name
-      "global": {
+      "global": { // table name
         "$index": 1,
-        // mode name
-        "default": {
+        "default": { // mode name
           "level": 5 // stat name and value
         }
       }
@@ -336,6 +336,7 @@ Response on request with "params" `{ "stats": ["level"] }`:
   }
 }
 ```
+</details>
 
 ### GetUnlocks
 
@@ -355,7 +356,9 @@ Method to request user's unlocks progress.
 ```
 
 The parameter `unlocks` (_array of string_) work as filter by unlock name. If param value is `{}`, `[]`, `null` or absent - filter is empty, so all user unlocks for this filter type will be sent. If value is set, the only suitable unlocks will be added to the response.
-Response filtering by unlock name:
+
+<details>
+<summary>Response filtering by unlock name:</summary>
 
 ```json
 {
@@ -377,6 +380,7 @@ Response filtering by unlock name:
   }
 }
 ```
+</details>
 
 Request without filter:
 
@@ -392,7 +396,8 @@ Request without filter:
 }
 ```
 
-Response with all unlocks:
+<details>
+<summary>Response with all unlocks:</summary>
 
 ```json
 {
@@ -422,6 +427,7 @@ Response with all unlocks:
   }
 }
 ```
+</details>
 
 The response contains unlock's data, grouped by names.
 
@@ -463,7 +469,8 @@ $filter - parameter defining response filter. This is an aggregation of filter f
 - `stats` (_array of string_) - stat names which will be added to response
 - `unlocks` (_array of string_) - unlock names which will be added to response
 
-Response:
+<details>
+<summary>Response:</summary>
 
 ```json
 {
@@ -493,6 +500,18 @@ Response:
   }
 }
 ```
+</details>
+
+
+### AnoGetStats
+
+WIP
+
+
+### AnoGetUnlocks
+
+WIP
+
 
 ### GrantRewards
 
@@ -515,6 +534,8 @@ Lets take a look onto `gems` unlock from [GetUnlocks](#getunlocks) response. The
 }
 ```
 
+<details>
+<summary>Response:</summary>
 Response:
 
 ```json
@@ -545,6 +566,7 @@ Response:
   }
 }
 ```
+</details>
 
 As seen, the response format is the same as for the [GetUnlocks](#getunlocks). `gems`-unlock is succesfully rewarded and now if we call [GetStats](#getstats), `gems`-stat value will be **95**, because as seen from [GetDescription](#getdescription) every unlock stage updates `gems`-stat by 1.
 
