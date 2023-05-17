@@ -27,7 +27,7 @@ Admin actions also splitted by services(userstat, profile, etc.)
 
 ![Admin actions](./images/admin-actions.png)
 #### Profile admin actions
-To use profile actions in admin panel you must add `admin_panel` tag in [action declaration on daScript](./../configs-format/profile-config-format.md).  
+To use profile actions in admin panel you must add `admin_panel` tag in [action declaration on daScript](../configs-format/profile-config-format.md).  
 To use action set action parameters and press `Send action` button:  
 ![Admin actions](./images/send-admin-actions.png)  
 You can see action result in the console:  

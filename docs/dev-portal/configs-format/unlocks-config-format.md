@@ -8,11 +8,11 @@ Most modern game use players achievements. The achievement can be simple, like k
 In our services, player achievements are implemented as unlocks. [Player statistics](stats-config-format) are used to open unlocks.
 
 This article describes the format of unlocks config and provides examples of simple and complex unlocks.
-You can read about using unlocks in your game here: [Userstat Api](./../services-api/userstat-api#userstat-api).
+You can read about using unlocks in your game here: [Userstat Api](../services-api/userstat-api#userstat-api).
 
 ## Unlocks format
 
-To use and store an unlock you need to add its description to [unlocks config](./../gui/configs-management#multi-element-config) and [deploy configs](./../gui/configs-management#deploy-configs) to services.
+To use and store an unlock you need to add its description to [unlocks config](../gui/configs-management#multi-element-config) and [deploy configs](../gui/configs-management#deploy-configs) to services.
 
 **Unlock description format**:
 
@@ -55,11 +55,11 @@ To use and store an unlock you need to add its description to [unlocks config](.
 - `hidden` (_bool_) - if = true, hide unlock from user. Hidden unlocks used like helper to implement some complex mechanics. [Examples](#hidden-unlocks).
 - `periodic` (_bool_) - if = true, the unlock stages are considered cyclic. [Example](#periodic-unlocks).
 - `startStageLoop` (_int_) - the number of the stage at which the cycle will begin. Works only if periodic field value is set to true. [Example](#progressive-player-level).
-- `autoRewarding` - if = true, the rewards of the unlock stage will be received automatically when the unlock stage opens. [Example](#auto-rewarding-unlocks) Otherwise you need to use userstat api to [reward unlock](./../services-api/userstat-api#grantrewards).
+- `autoRewarding` - if = true, the rewards of the unlock stage will be received automatically when the unlock stage opens. [Example](#auto-rewarding-unlocks) Otherwise you need to use userstat api to [reward unlock](../services-api/userstat-api#grantrewards).
 - `dynamicUnlock` (_bool_) - if = true, the unlock progress and stage will be decreased when the result of condition expression decreases. [Example](#dynamic-unlocks).
 - `dynamicProgress` (_bool_) - if = true, only the unlock progress will be decreased when the result of condition expression decreases, the unlock stage remains unchanged. [Example](#dynamic-progress).
 - `dynamicRewards` (_bool_) - if = true, the unlock awards will be given at each opening of the unlock stage. Works only if dynamicUnlock is true. If the unlock stage was awarded, then decreased and then increased again, and that stage has to be rewarded again, set this flag to true. [Example](#dynamic-rewards).
-- `showForAll` (_bool_) - determines whether the unlock should be visible to another user. To request another user unlocks use [AnoGetUnlocks action](./../services-api/userstat-api#anogetunlocks).
+- `showForAll` (_bool_) - determines whether the unlock should be visible to another user. To request another user unlocks use [AnoGetUnlocks action](../services-api/userstat-api#anogetunlocks).
 - `requirement` (_string_) - the unlocks necessary for given unlock awards. If the player does not open the required unlocks, the rewards will not be given. [examples](#unlocks-with-requirement)
   Requirement format: `"unlock1 & unlock2"` if player does not open unlock1 and unlock2, the rewards will not be given.
 - `meta` (_json object_) - field for custom game data. Can be used to pass arbitrary data to the game client. The value must be a json object. [Example](#using-meta).
@@ -297,7 +297,7 @@ For example for some extra experience:
 
 ### Sessional unlocks
 
-SESSIONAL unlocks calculate condition result using statistics from a single session. See [send session result](./../services-api/userstat-api#sessional-stats).  
+SESSIONAL unlocks calculate condition result using statistics from a single session. See [send session result](../services-api/userstat-api#sessional-stats).  
 Sessional unlocks can be opened only once.  
 **battleKiller** - kill 10 enemies in one battle. Increment sessionalUnlocksCount stat as rewards. Open only once.
 
