@@ -8,7 +8,7 @@ Friends are an essential part of all modern games. On our service, friends are i
 
 # Contacts config
 
-To use contacts you need to add the description to [contacts config](../gui/configs-management#single-config), and [deploy configs](../gui/configs-management#deploy-configs) to services.
+To use contacts you need to add the description to [contacts config](./../gui/configs-management#single-config), and [deploy configs](./../gui/configs-management#deploy-configs) to services.
 
 **Contacts description format**:
 
@@ -39,4 +39,4 @@ Or different, for example to have different friends in different game modes:
 }
 ```
 
-Read about [contacts API](../services-api/contacts-api) to understand how to use groups in your game.
+Read about [contacts API](./../services-api/contacts-api) to understand how to use groups in your game.

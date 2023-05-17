@@ -3,7 +3,7 @@ title: Modes config format
 ---
 
 # Statistic modes
-Modes makes work with [user statistic](stats-config-format) more flexible.  
+Modes makes work with [user statistic](./stats-config-format) more flexible.  
 Modes is an abstract like a container for statistics, for example:
 * different game types: solo, squad, etc.
 * different countries: ussr, germany, etc.
@@ -13,11 +13,11 @@ Modes is an abstract like a container for statistics, for example:
 Each mode contains all user statstics and it can be different for each modes.
 For example: user can have 4 kills in _solo_ mode and 10 kills in _squad_.
 
-You can read about the interaction between the game and the statistics server here: [Userstat Api](../services-api/userstat-api).
+You can read about the interaction between the game and the statistics server here: [Userstat Api](./../services-api/userstat-api).
 
 ## Mode format
 
-To use and store statistics you need to add modes description to [modes config](../gui/configs-management#multi-element-config), and [deploy configs](../gui/configs-management#deploy-configs) to services.
+To use and store statistics you need to add modes description to [modes config](./../gui/configs-management#multi-element-config), and [deploy configs](./../gui/configs-management#deploy-configs) to services.
 
 **Mode description format**:
 
@@ -43,5 +43,5 @@ To use and store statistics you need to add modes description to [modes config](
 - `public` (_bool_) - determines whether the stats for this mode should be visible to another user.
   :::note
   This work only for stats with `showForAll = true`  
-  To request another user statistics use [AnoGetStats action](../services-api/userstat-api#anogetstats).  
+  To request another user statistics use [AnoGetStats action](./../services-api/userstat-api#anogetstats).  
   :::
