@@ -17,14 +17,45 @@ const sidebars = {
     {
       type: 'category',
       label: 'Dev Portal',
+      link: {
+        type: 'doc',
+        id: 'dev-portal/getting-started',
+      },
       items: [
-        'dev-portal/gui-description',
-        'dev-portal/stats-config-format',
-        'dev-portal/unlocks-config-format',
-        'dev-portal/userstat-api',
-        'dev-portal/leaderboard-api',
-        'dev-portal/contacts-api',
-      ],
+        'dev-portal/getting-started',
+        {
+          type: 'category',
+          label: 'Gui Description',
+          items: [
+            'dev-portal/gui/configs-management',
+            'dev-portal/gui/leaderboard',
+            'dev-portal/gui/user-management',
+            'dev-portal/gui/services-info',
+            'dev-portal/gui/console',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Configs format',
+          items: [
+            'dev-portal/configs-format/tables-config-format',
+            'dev-portal/configs-format/modes-config-format',
+            'dev-portal/configs-format/stats-config-format',
+            'dev-portal/configs-format/unlocks-config-format',
+            'dev-portal/configs-format/contacts-config-format',
+            'dev-portal/configs-format/profile-config-format',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Services API',
+          items: [
+            'dev-portal/services-api/userstat-api',
+            'dev-portal/services-api/leaderboard-api',
+            'dev-portal/services-api/contacts-api',
+          ],
+        },
+      ]
     },
     {
       type: 'category',

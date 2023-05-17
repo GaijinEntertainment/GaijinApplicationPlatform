@@ -34,8 +34,8 @@ For work with contact, the user must log in to the contact server. Without this,
 
 ```json
 {
-  "user_id": 16929100,
-  "nick": "test156",
+  "user_id": 11111111,
+  "nick": "user1",
   "login": {
     "first": 1670923278,
     "last": 1670926150
@@ -76,18 +76,15 @@ Action specific parameters:
   "jsonrpc": "2.0",
   "id": "912eb0e0-853e-47d6-a519-49dcb4b7e604",
   "result": {
-    "Dungeon": {
-      //group
-      "requestsToMe": [
-        //status
+    "Dungeon": { //group
+      "requestsToMe": [ //status
         {
           "uid": 11111111,
           "nick": "user1",
           "time": 1671443640
         }
       ],
-      "approved": [
-        //status
+      "approved": [ //status
         {
           "uid": 33333333,
           "nick": "user3",
