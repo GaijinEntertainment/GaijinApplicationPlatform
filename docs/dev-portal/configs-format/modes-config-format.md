@@ -3,7 +3,7 @@ title: Modes config format
 ---
 
 # Statistic modes
-Modes makes work with [user statistic](./stat-config-format) more flexible.  
+Modes makes work with [user statistic](./stats-config-format) more flexible.  
 Modes is an abstract like a container for statistics, for example:
 * different game types: solo, squad, etc.
 * different countries: ussr, germany, etc.

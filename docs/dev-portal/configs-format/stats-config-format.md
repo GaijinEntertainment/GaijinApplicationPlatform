@@ -57,7 +57,7 @@ To use and store statistics you need to add stats description to [stats config](
   :::
 - `allowChangeFromClient` (_bool_) - determines the possibility of changing stat by the client.
   :::caution
-  use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](userstat-api#clnchangestats)
+  use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](./../services-api/userstat-api#clnchangestats)
   :::
 - `meta` (_json object_) - field for custom game data. Can be used to pass arbitrary data to the game client. The value must be a json object
 - `condition` (_string_) - if set, the stat value calculate from other stats specified in condition. Calculable stats can't be set or change outside, if you try change, stat will remain unchanged.
@@ -139,7 +139,7 @@ Simple stat used to store a player game statistics. Can be used to calculate oth
 
 #### Moving average calculation
 
-To calculate moving average using old value of the stat(oldVal), new value of the stat(val), duration(len), and window(determine in stat config). val and len set in the request to [change stats](userstat-api#changestats).
+To calculate moving average using old value of the stat(oldVal), new value of the stat(val), duration(len), and window(determine in stat config). val and len set in the request to [change stats](./../services-api/userstat-api#changestats).
 
 Formula for calculation the moving average: `newVal = len/window < 1 ? val/window + oldVal(1- len/window): val/len`
 

@@ -3,7 +3,7 @@ title: Tables config format
 ---
 
 # Statistic tables
-Tables combined with [modes](./modes-config-format.)  makes work with [user statistic](./stat-config-format) very flexible and abstract. Table is a time period container for statistics.  
+Tables combined with [modes](./modes-config-format)  makes work with [user statistic](./stats-config-format) very flexible and abstract. Table is a time period container for statistics.  
 For example:  
 * day
 * week
