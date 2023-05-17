@@ -6,9 +6,9 @@ title: Leaderboard
 To see a leaderboard select appropriate menu item. Then select filter items:  
 ![Leaderboard filters](./images/lb-filters.png)
 
-* table - leaderboard for specific table [more info](./../configs-format/tables-config-format)
-* mode - leaderboard for specific mode [more info](./../configs-format/modes-config-format)
-* group - special stat `__leaderboard` value. [more info](./../configs-format/stats-config-format#leaderboard-group).
+* table - leaderboard for specific table [more info](../configs-format/tables-config-format)
+* mode - leaderboard for specific mode [more info](../configs-format/modes-config-format)
+* group - special stat `__leaderboard` value. [more info](../configs-format/stats-config-format#leaderboard-group).
   :::note
   If you don't use leaderboard group stay this field empty.
   :::
