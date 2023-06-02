@@ -15,16 +15,16 @@ It contains tabs with all game configs and [deploy](#deploy) tab.
 There are different types of configs:
 
 [Multi element configs](#multi-element-config):
-* Stats        [(see format)](../configs-format/stats-config-format)
-* Unlocks      [(see format)](../configs-format/unlocks-config-format)
-* Modes        [(see format)](../configs-format/modes-config-format)
-* Tables       [(see format)](../configs-format/tables-config-format)
+* Stats        [(see format)](../configs-format/stats-config-format.md)
+* Unlocks      [(see format)](../configs-format/unlocks-config-format.md)
+* Modes        [(see format)](../configs-format/modes-config-format.md)
+* Tables       [(see format)](../configs-format/tables-config-format.md)
 
 [Single configs](#single-config):
-* Contacts     [(see format)](../configs-format/contacts-config-format)
+* Contacts     [(see format)](../configs-format/contacts-config-format.md)
 
 [Scripts configs](#scripts-config):
-* Scripts      [(see format)](../configs-format/profile-config-format)
+* Scripts      [(see format)](../configs-format/profile-config-format.md)
 
 ### Multi-element config
 Multi-element config contains array of similar elements, like stat, unlock, table, etc. All multi-element configs are editing in one way.  
@@ -59,7 +59,7 @@ Data are edited as in a regular text editor, with [code-complete](#code-complete
 
 ### Scripts config
 Profile server use scripts configs on [daScript](https://dascript.org/) language.
-More information about [script config format](../configs-format/profile-config-format).
+More information about [script config format](../configs-format/profile-config-format.md).
 
 #### Upload/Download scripts archive
 To upload scripts use zip archive containing folder with scripts.  

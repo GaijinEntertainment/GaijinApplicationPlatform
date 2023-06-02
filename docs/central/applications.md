@@ -16,5 +16,5 @@ In which cases will it be convenient to have several applications? If a project 
 
 #### Possible next steps after creating an application:
 
-- [Create a schema](application-schema) for access control, in other words add roles and permissions
-- Adding other [users](application-users) to the application
+- [Create a schema](application-schema.md) for access control, in other words add roles and permissions
+- Adding other [users](application-users.md) to the application
