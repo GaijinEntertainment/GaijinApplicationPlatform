@@ -4,13 +4,13 @@ title: Roles and permissions
 
 The page allows you to manage roles and permissions within the application (i.e. changing application schema). A permission is an atomic unit of access to an application. Whereas a role is a set of permissions that are assigned to a user and define his access rights within the application.
 
-## Application schema
+## Application schema {#app-schema}
 
 ![Application schema](./assets/app-schema.png)
 
 Every user may assume several roles at the same time. So, there is no sense in creating a large number of complicated roles that differ literally in a couple of features. It is better to create several roles complementary to each other and assign a necessary role combination to a particular user.
 
-### Creating a permission
+### Creating a permission {#creating-a-permission}
 
 To create a new permission, click the **Add permission** button at the bottom row of the table.
 
@@ -58,7 +58,7 @@ After clicking on the **Save changes** button, an overview of the changes (added
 
 ![Creating a role](./assets/app-schema-changes.png)
 
-## Export/Import schema
+## Export/Import schema {#export-import-schema}
 
 The export modal window contains a list of roles and permissions that are available for selection. Note that when you select an individual role for export, the permissions related to that role are automatically selected (with no possibility of exclusion). As a result of selecting roles and permissions, in the right part of the list is generated JSON data for export. You must click **Copy export data** to put the data to the clipboard.
 

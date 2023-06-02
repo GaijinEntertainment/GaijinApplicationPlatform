@@ -53,6 +53,25 @@ yarn run start --locale ru
 
 :::
 
+### Using internal links
+
+When using internal links, we strongly recommend the following rules:
+
+- Link to pages **by file name** (including `.md` extensions).
+
+  ```
+  [Apple](apple.md)
+  ```
+
+- **Use relative paths** instead of absolute paths
+  ```
+  [Apple](apple.md)
+  [Banana](subfolder/banana.md)
+  [Cherry](../cherry.md)
+  ```
+
+For more information you can read [here](https://docusaurus.io/docs/markdown-features/links).
+
 ### Generating OpenAPI documentation
 
 This portal allows you to generate documentation sections based on the OpenAPI specification. In order to integrate OpenAPI follow these steps:

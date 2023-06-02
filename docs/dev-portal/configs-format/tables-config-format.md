@@ -3,7 +3,7 @@ title: Tables config format
 ---
 
 # Statistic tables
-Tables combined with [modes](modes-config-format)  makes work with [user statistic](stats-config-format) very flexible and abstract. Table is a time period container for statistics.  
+Tables combined with [modes](modes-config-format.md) makes work with [user statistic](stats-config-format.md) very flexible and abstract. Table is a time period container for statistics.  
 For example:  
 * day
 * week
@@ -11,13 +11,13 @@ For example:
 * global
 
 Each table contain all game modes which contain user statistics.
-So you can use user statistic on each table independent, for [Leaderboards](../gui/leaderboard.md) or for [User achievements](unlocks-config-format)
+So you can use user statistic on each table independent, for [Leaderboards](../gui/leaderboard.md) or for [User achievements](unlocks-config-format.md)
 
-You can read about the interaction between the game and the statistics server here: [Userstat Api](../services-api/userstat-api).
+You can read about the interaction between the game and the statistics server here: [Userstat Api](../services-api/userstat-api.md).
 
 ## Table format
 
-To use and store statistics you need to add tables description to [tables config](../gui/configs-management#multi-element-config), and [deploy configs](../gui/configs-management#deploy-configs) to services.
+To use and store statistics you need to add tables description to [tables config](../gui/configs-management.md#multi-element-config), and [deploy configs](../gui/configs-management.md#deploy-configs) to services.
 
 **Table description format**:
 
@@ -44,11 +44,11 @@ To use and store statistics you need to add tables description to [tables config
 - `leaderboard` (_string_) - type of the leaderboard creating for this table, possible values:
   - "NONE" - leaderboard will not be generated for this table.
   - "SIMPLE" - generate leaderboard without _groups_ for this table.
-  - "GROUPING" - generate groups leaderboard for this table. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format#leaderboard-group)
+  - "GROUPING" - generate groups leaderboard for this table. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format.md#leaderboard-group)
 - `public` (_bool_) - determines whether the stats for this table should be visible to another user.
   :::note
   This work only for stats with `showForAll = true` and `public` modes  
-  To request another user statistics use [AnoGetStats action](../services-api/userstat-api#anogetstats).  
+  To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).  
   :::
 - `period` (_string_) - the period of the table, next season will start automatically after period time. Used only with `timeline` parameter. [Example](#periodic)  
   Format: number 1-16 digits and postfix(`s` - seconds, `m` - minutes, `h` - hours, `d` - days, `w` - weeks). For example: `12h`, `1d`, `1w`.  

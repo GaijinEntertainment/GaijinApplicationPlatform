@@ -8,10 +8,10 @@ In Central every significant action performed by the user is recorded in the eve
 
 On the most important pages of Central there are **Latest activity** blocks with a table of 30 recent changes. At the bottom of the table there is a **Show more** button for going to a more detailed log page. This block is presented on four pages:
 
-- [Project overview](project)
-- [Application overview](applications)
-- [Application schema](application-schema)
-- [Application users](application-users)
+- [Project overview](project.md)
+- [Application overview](applications.md)
+- [Application schema](application-schema.md)
+- [Application users](application-users.md)
 
 ### Log events
 

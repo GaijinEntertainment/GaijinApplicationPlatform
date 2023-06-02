@@ -4,9 +4,9 @@ title: Project
 
 Project is the top-level entity for Gaijin Central. Key features of the project:
 
-- Contains within itself one or more [applications](applications). Application is a logical entity, allowing for breaking a project into separate subsystems (e.g. you can keep applications for different platforms or environments - test, production, etc)
-- Ability to connect the necessary [services](services) depending on your needs
-- Allows flexible management of access for [administrators](project-administrators) to applications and services
+- Contains within itself one or more [applications](applications.md). Application is a logical entity, allowing for breaking a project into separate subsystems (e.g. you can keep applications for different platforms or environments - test, production, etc)
+- Ability to connect the necessary [services](services.md) depending on your needs
+- Allows flexible management of access for [administrators](project-administrators.md) to applications and services
 
 ---
 
@@ -14,7 +14,7 @@ Project is the top-level entity for Gaijin Central. Key features of the project:
 
 ## Creating a new project
 
-To register new project press the **Create new project** button on **Start page** or press the same button in [Start menu](getting-started#start-menu).
+To register new project press the **Create new project** button on **Start page** or press the same button in [Start menu](getting-started.md#start-menu).
 
 ![Creating a new project](./assets/project-new.png)
 
@@ -30,6 +30,6 @@ Done! The project has been created and you are its owner and administrator.
 
 #### Possible next steps after creating an project:
 
-- [Create an application](applications#creating-a-new-application) within the project
-- Adding other [administrators](project-administrators) to the project
-- Connecting [services](services)
+- [Create an application](applications.md#creating-a-new-application) within the project
+- Adding other [administrators](project-administrators.md) to the project
+- Connecting [services](services.md)

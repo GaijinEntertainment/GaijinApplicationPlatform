@@ -34,9 +34,9 @@ Method to request leaderboard representation.
 - `appid` (_int_) - application id
 - `token` (_string_) - user token
 - `category` (_string_) - stat's name on which the rating is based
-- `table` (_string_) - has the same meaning, described in the [Userstat API](userstat-api#common-params) and [Unlocks format](../configs-format/unlocks-config-format#unlocks-format).
-- `tableIndex` (_int_) - has the same meaning, described in the [Userstat API](userstat-api#common-params).
-- `gameMode` (_string_) - has the same meaning, described in the [Userstat API](userstat-api#common-params) and [Unlocks format](../configs-format/unlocks-config-format#unlocks-format).
+- `table` (_string_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format).
+- `tableIndex` (_int_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params).
+- `gameMode` (_string_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format).
 - `start` (_int_) - start place (literally "get leaderboard from {start} place and lower")
 - `count` (_int_) - count of users to return in respose
 - `resolveNick` (_int_) - use user id _(0)_ or user nickname _(1)_ as key of user's data

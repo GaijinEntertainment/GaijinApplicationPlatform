@@ -19,9 +19,9 @@ Userstat API uses [json-rpc protocol](https://www.jsonrpc.org/specification).
 
 Also some methods use the same parameters:
 
-- `table` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format#unlocks-format). It can be considered as a time-namespace for calculating statistics: _global_ - stats for all the time, _day_ - stats for one day, etc. Currently, only the _global_ table is available.
+- `table` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). It can be considered as a time-namespace for calculating statistics: _global_ - stats for all the time, _day_ - stats for one day, etc. Currently, only the _global_ table is available.
 - `index` (_int_) - table's index, for repeating tables (e.g. day table) sequence number.
-- `mode` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format#unlocks-format). Currently only the _default_ mode is available.
+- `mode` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). Currently only the _default_ mode is available.
 
 ## Admin/Server methods
 
@@ -67,7 +67,7 @@ Another way to change stats is to use `"$set"`. In this case the value is assign
 }
 ```
 
-For the stats, calculating as [moving average](../configs-format/stats-config-format#moving-average) the `$avg` parameter is used:
+For the stats, calculating as [moving average](../configs-format/stats-config-format.md#moving-average) the `$avg` parameter is used:
 
 ```json
 "__body__": {
@@ -83,6 +83,7 @@ For the stats, calculating as [moving average](../configs-format/stats-config-fo
 ```
 
 #### Sessional stats
+
 For the sessional stats(e.g. kills per battle) the `$sessionId` parameter is used:
 
 ```json
@@ -265,7 +266,7 @@ The following fields are present in response, but currently not supported:
 
 </details>
 
-See [stats description format](../configs-format/stats-config-format) and [unlocks description format](../configs-format/unlocks-config-format) for details.
+See [stats description format](../configs-format/stats-config-format.md) and [unlocks description format](../configs-format/unlocks-config-format.md) for details.
 
 ### GetStats
 
@@ -299,9 +300,11 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
   "id": "ecdf8a03-a1bf-43f4-96eb-06550cdb63f9",
   "result": {
     "stats": {
-      "global": { // table name
+      "global": {
+        // table name
         "$index": 1,
-        "default": { // mode name
+        "default": {
+          // mode name
           // stats name and value
           "level": 189,
           "gems": 94,
@@ -314,6 +317,7 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
   }
 }
 ```
+
 </details>
 
 <details>
@@ -325,9 +329,11 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
   "id": "ecdf8a03-a1bf-43f4-96eb-06550cdb63f9",
   "result": {
     "stats": {
-      "global": { // table name
+      "global": {
+        // table name
         "$index": 1,
-        "default": { // mode name
+        "default": {
+          // mode name
           "level": 5 // stat name and value
         }
       }
@@ -336,6 +342,7 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
   }
 }
 ```
+
 </details>
 
 ### GetUnlocks
@@ -380,6 +387,7 @@ The parameter `unlocks` (_array of string_) work as filter by unlock name. If pa
   }
 }
 ```
+
 </details>
 
 Request without filter:
@@ -427,19 +435,20 @@ Request without filter:
   }
 }
 ```
+
 </details>
 
 The response contains unlock's data, grouped by names.
 
 - `stage` value indicates current unlock's stage.
-- `lastRewardedStage` is the last rewarded stage. So if unlock is not [auto rewardable](../configs-format/unlocks-config-format#auto-rewarding-unlocks) and there is a difference with `stage`, you can reward [unlock manually](#grantrewards).
-- `progress` shows the current value of [condition](../configs-format/unlocks-config-format#unlocks-format) and the `nextStage` shows which condition's value needs to go up to the next stage. For example: `gems` unlock has the `nextStage` equal to 192, and the `stage` equal to 95. That means what the stage 96 can be got when the `progress` reaches 192.
+- `lastRewardedStage` is the last rewarded stage. So if unlock is not [auto rewardable](../configs-format/unlocks-config-format.md#auto-rewarding-unlocks) and there is a difference with `stage`, you can reward [unlock manually](#grantrewards).
+- `progress` shows the current value of [condition](../configs-format/unlocks-config-format.md#unlocks-format) and the `nextStage` shows which condition's value needs to go up to the next stage. For example: `gems` unlock has the `nextStage` equal to 192, and the `stage` equal to 95. That means what the stage 96 can be got when the `progress` reaches 192.
 - `timestamp` is the time of last unlock update(e.g after the reward).
 - [`lastSeenStage`](#setlastseenunlocks)
 
 ### ClnChangeStats
 
-Client method for changing own user statistics. Can change only stats with flag [`allowChangeFromClient`](../configs-format/stats-config-format#stats-format)
+Client method for changing own user statistics. Can change only stats with flag [`allowChangeFromClient`](../configs-format/stats-config-format.md#stats-format)
 The token parameter is user jwt token. External userid not allowed, action can change **only user own statistics**. Response contains user stats and unlocks.
 
 ```json
@@ -461,7 +470,7 @@ The token parameter is user jwt token. External userid not allowed, action can c
 }
 ```
 
-`$mode`, `$tables` (_array of strings_) - parameters defining for which mode and table we want to change stats, works like in [ChangeStats method](userstat-api/#changestats).
+`$mode`, `$tables` (_array of strings_) - parameters defining for which mode and table we want to change stats, works like in [ChangeStats method](userstat-api.md/#changestats).
 $filter - parameter defining response filter. This is an aggregation of filter from GetStats and GetUnlocks methods, so the filter can contains next fields:
 
 - `tables` (_array of string_) - statistics tables which will be added to response
@@ -500,18 +509,16 @@ $filter - parameter defining response filter. This is an aggregation of filter f
   }
 }
 ```
-</details>
 
+</details>
 
 ### AnoGetStats
 
 WIP
 
-
 ### AnoGetUnlocks
 
 WIP
-
 
 ### GrantRewards
 
@@ -566,6 +573,7 @@ Response:
   }
 }
 ```
+
 </details>
 
 As seen, the response format is the same as for the [GetUnlocks](#getunlocks). `gems`-unlock is succesfully rewarded and now if we call [GetStats](#getstats), `gems`-stat value will be **95**, because as seen from [GetDescription](#getdescription) every unlock stage updates `gems`-stat by 1.
