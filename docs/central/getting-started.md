@@ -8,7 +8,7 @@ title: Getting Started
 
 :::info
 
-A **Developer License** is required to access Gaijin Central. You can read more about the requirements and the process of obtaining the Developer License in [this section](../newcomers-guide/getting-started.md).
+A **Developer License** is required to access Gaijin Central. You can read more about the requirements and the process of obtaining the Developer License in [this section](/#getting-a-developer-license).
 
 :::
 
