@@ -6,6 +6,13 @@ title: Projects
 
 - Go to [https://central-admin.gaijin.net](https://central-admin.gaijin.net/)
 - Press the **Add project** button
+
+:::info
+
+In order to create a new project in Central, it's required an enabled two-factor authorization (2FA) with code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
+
+:::
+
 - Enter the project name (_Latin letters, numbers, and spaces are allowed_)
 
 :::info

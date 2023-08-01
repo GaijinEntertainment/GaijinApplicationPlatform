@@ -12,7 +12,13 @@ Project is the top-level entity for Gaijin Central. Key features of the project:
 
 ![Project menu](./assets/project-page.png)
 
-## Creating a new project
+## Creating a new project {#new-project}
+
+:::info
+
+In order to create a new project in Central, it's required an enabled two-factor authorization (2FA) with code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
+
+:::
 
 To register new project press the **Create new project** button on **Start page** or press the same button in [Start menu](getting-started.md#start-menu).
 

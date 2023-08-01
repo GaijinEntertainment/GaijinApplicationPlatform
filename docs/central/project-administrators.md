@@ -10,7 +10,13 @@ There are currently two project roles: **Owner** and **Administrator**. A projec
 
 ![Project owners and administrators](./assets/project-admins.png)
 
-## Add administrators
+## Add administrators {#add-administrators}
+
+:::info
+
+For security reasons, to add administrator to the project, it is necessary for him to have two-factor authorization (2FA) enabled with the code generator application.
+
+:::
 
 The **Add administrator** button will open a modal window with **User ID** field. If the user is successfully found, the information about him will be displayed below and the **Continue** button will become active.
 
