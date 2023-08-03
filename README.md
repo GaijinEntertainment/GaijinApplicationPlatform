@@ -1,13 +1,15 @@
 # Gaijin Application Platform
 
-### Essential documents
-* [Newcomer's Guide](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/wiki/Platform-Newcomer's-Brief-Guide)
+### Documentation
 
-#### DevPortal documents
-* [Gui description](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/wiki/Dev-portal-gui)
-* [Stats config format](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/wiki/Dev-portal-stats-format)
-* [Unlocks config format](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/wiki/Dev-portal-unlocks-format)
-* [Userstat Api](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/wiki/Userstat-Api)
+- [Platform Newcomer's Guide](https://gaijinentertainment.github.io/GaijinApplicationPlatform)
+- [Dev Portal Getting Started](https://gaijinentertainment.github.io/GaijinApplicationPlatform/dev-portal/getting-started)
+- [Central Getting Started](https://gaijinentertainment.github.io/GaijinApplicationPlatform/central/getting-started)
 
 ### Downloads
-* [Toolset Download](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/releases)
+
+[Essential GAP Toolset](https://github.com/GaijinEntertainment/GaijinApplicationPlatform/releases) – minimal toolset required for upload/download releases to the Gaijin Distribution Network.
+
+### Contributing
+
+If you're interested in contributing to the documentation, check out [our contribution guide](https://gaijinentertainment.github.io/GaijinApplicationPlatform/how-to-contribute).
