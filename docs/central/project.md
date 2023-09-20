@@ -20,6 +20,8 @@ In order to create a new project in Central, it's required an enabled two-factor
 
 :::
 
+---
+
 To register new project press the **Create new project** button on **Start page** or press the same button in [Start menu](getting-started.md#start-menu).
 
 ![Creating a new project](./assets/project-new.png)

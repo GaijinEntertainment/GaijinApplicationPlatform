@@ -18,7 +18,7 @@ To create a new permission, click the **Add permission** button at the bottom ro
 
 In the modal window that opens, there is the following form:
 
-- **Name** _(required)_ – application-wide unique permission key
+- **Name** _(required)_ – application-wide unique permission key. You can name permissions any way you like, but for large schemas we recommend using prefixes in the name (e.g. `user.login`) for convenient [grouping of permissions](#grouping-permissions).
 - **Description** – a text field describing the purpose of the permission
 - **Default value** – `TRUE` or `FALSE`
 
@@ -57,6 +57,18 @@ The **Save changes** button displays an edit counter, and the changed fields are
 After clicking on the **Save changes** button, an overview of the changes (added, deleted, changed roles and/or permissions, updated values) will be shown. The **Apply** button will save these changes to the server.
 
 ![Creating a role](./assets/app-schema-changes.png)
+
+### Grouping permissions
+
+For large schema applications, Central provides convenient permission grouping functionality. In order to combine a set of permissions into a logical group, you have the ability to specify a permission name in the format `<group>.<permission>`. For example, the schema may have permissions named `inventory.edit` and `inventory.view`, which will automatically be grouped into the `inventory` group. You can use any level of nesting in the name, but grouping will be by prefix up to the first dot. Each group can be collapsed or expanded in the user interface as desired, and edits can be made to the schema for the entire group at once.
+
+![Permission group actions](./assets/app-schema-group.png)
+
+It is important to note that the use of a dot in the name of permissions does not impose any additional functionality, but is only used for convenient structuring of the schema.
+
+:::caution
+If you group permissions using a dot, you cannot use the prefix as the name of an individual permission. For example, you cannot use `inventory` and `inventory.edit` permissions in the schema at the same time. This applies to permissions of any nesting level.
+:::
 
 ## Export/Import schema {#export-import-schema}
 
