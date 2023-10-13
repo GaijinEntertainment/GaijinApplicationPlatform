@@ -34,7 +34,7 @@ If you have the required access rights to create new projects, this page will al
 
 ![Account menu](./assets/account-menu.png)
 
-The Account menu button can be found in the top-right corner of the page. This menu allows you to:
+The Account menu button can be found in the top-right corner of the page. This menu enables you to:
 
 - Copy user ID. This can be useful when adding yourself to the list of users of an application or service
 - Go to your [Profile](user-profile.md) page
