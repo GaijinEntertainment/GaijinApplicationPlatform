@@ -299,11 +299,11 @@ In the modal window that opens, enter the following:
 - Default value – `TRUE` or `FALSE`. 
 
 
-**Note:** For large schemas application, it is recommended using [grouping permissions feature](#grouping-permissions-feature) by entering prefixes in the name (e.g. using `<group>.<permission>` format).
+**Note:** For large schemas application, it is recommended using [grouping permissions feature](#grouping-permissions-feature) by entering prefixes in the name (e.g. using `<group>.<permission>` format). 
 
 ### Editing permissions
 
-To edit a permission:
+To edit a permission: 
 
 1.	Click three dots next to the permission you wish to edit and select **Edit permission**.
 
