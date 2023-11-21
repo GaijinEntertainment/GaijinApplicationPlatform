@@ -289,7 +289,7 @@ Any permissions group can be collapsed or expanded in the user interface; you ca
 
 To add a new permission, click the **Add permission** button at the bottom row of the table.
 
-![Creating a permission](./assets/add-permission1.png)
+![Creating a permission](./assets/add-permission1.png) 
 
 In the modal window that opens, enter the following:
 
