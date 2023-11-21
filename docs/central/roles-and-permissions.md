@@ -1,5 +1,6 @@
 ---
 title: Roles and permissions
+
 ---
 
 The page enables you to manage roles and permissions within Central.
@@ -68,7 +69,7 @@ The new owner is now added to the project.
 
 ### Adding admistrators to an application.
 
-On the **Application page**, you can find the list of administrators added to the application. The administrators list is still empty since no administrators have been added to the project yet.
+On the **Application page**, you can find the list of administrators added to the application. The administrators list is still empty since no administrators have been added to the project yet. 
 
 ![project admins](./assets//application-admins1.png)
 
