@@ -450,3 +450,5 @@ Note that when you select a role for export, the system automatically selects th
 
 4.	Click **Copy export data**.
 This will copy data to the clipboard, making it available for a developer. Then you can import this schema from the clipboard into another application.
+
+[def]: ./assets/add-permission-1.png
