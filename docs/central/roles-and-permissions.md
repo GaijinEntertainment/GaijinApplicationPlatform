@@ -318,7 +318,7 @@ To edit a permission:
 
 ![Edit permission](./assets/Edit-permission2.png)
 
-2.    Click Save.
+2.    Click Save. 
 
 
 ### Creating a role
