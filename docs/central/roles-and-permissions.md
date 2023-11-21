@@ -296,7 +296,7 @@ In the modal window that opens, enter the following:
 - Name (required) – application-wide unique permission key. You can name permissions any way you like. For large schemas application, it is recommended using grouping feature by entering prefixes in the name (e.g. using <group>.<permission> format).
  **Note:** You can start entering the permission name prefix by selecting the created permission group, as illustrated below.
 - Description – a text field describing the purpose of the permission.
-- Default value – `TRUE` or `FALSE`.
+- Default value – `TRUE` or `FALSE`. 
 
 
 **Note:** For large schemas application, it is recommended using [grouping permissions feature](#grouping-permissions-feature) by entering prefixes in the name (e.g. using `<group>.<permission>` format).
