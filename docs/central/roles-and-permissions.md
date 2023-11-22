@@ -324,8 +324,6 @@ To edit a permission:
 To create a new role:
 1. Click the **Add role** button at the right column of the table.
 
-![Creating a role](./assets/add-role1.png)
-
 2. In the New role window that opens, enter the following information in the form:
 
 - **Name** _(required)_ – application-wide unique role key
