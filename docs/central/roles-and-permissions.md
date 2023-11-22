@@ -291,9 +291,10 @@ To add a new permission, click the **Add permission** button at the bottom row o
 
 In the modal window that opens, enter the following:
 
-- Name (required) – application-wide unique permission key. You can name permissions any way you like. For large schemas application, it is recommended using grouping feature by entering prefixes in the name (e.g. using <group>.<permission> format).
+- Name (required) – application-wide unique permission key. You can name permissions any way you like. For large schemas application, it is recommended using grouping feature by entering prefixes in the name (e.g. using `<group>.<permission>` format).
+
  **Note:** You can start entering the permission name prefix by selecting the created permission group, as illustrated below.
-- Description – a text field describing the purpose of the permission.
+- Description – a text field describing the purpose of the permission. 
 - Default value – `TRUE` or `FALSE`. 
 
 
