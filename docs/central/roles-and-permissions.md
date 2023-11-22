@@ -289,8 +289,6 @@ Any permissions group can be collapsed or expanded in the user interface; you ca
 
 To add a new permission, click the **Add permission** button at the bottom row of the table.
 
-![Creating a permission](./assets/add-permission1.png) 
-
 In the modal window that opens, enter the following:
 
 - Name (required) – application-wide unique permission key. You can name permissions any way you like. For large schemas application, it is recommended using grouping feature by entering prefixes in the name (e.g. using <group>.<permission> format).
@@ -449,5 +447,5 @@ To export an application schema:
 Note that when you select a role for export, the system automatically selects the permissions related to that role, and you cannot exclude them. When you select roles and/or permissions, the auto-generated Json data for export is displayed in the right part of the Export roles and permissions page.
 
 4.	Click **Copy export data**.
-This will copy data to the clipboard, making it available for a developer. Then you can import this schema from the clipboard into another application.
+This will copy data to the clipboard, making it available for a developer. Then you can import this schema from the clipboard into another application. 
 
