@@ -32,3 +32,16 @@ To sorting the Leaderboard by various stat just click on column header:
 
 Use the navigation buttons to move to the next or previous page of the Leaderboard:
 ![Leaderboard pages](./images/lb-pages.png)
+
+You can save leaderboard table with filters. The table is saving when you click to “Get Leaderboard” button. To show all saved tables and filters open tabs.
+![Leaderboard tabs](./images/lb-tabs.png)
+
+To add new leaderboard item click to “Add leaderboard item”.
+![Add leaderboard tab](./images/lb-add-tab.png)
+
+To remove saved leaderboard item click to remove button.
+![Remove leaderboard tab](./images/lb-remove-tab.png)
+:::note
+You can't remove last item in the list
+:::
+
