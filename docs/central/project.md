@@ -4,35 +4,46 @@ title: Project
 
 Project is the top-level entity for Gaijin Central. Key features of the project:
 
-- Contains within itself one or more [applications](applications.md). Application is a logical entity, allowing for breaking a project into separate subsystems (e.g. you can keep applications for different platforms or environments - test, production, etc)
-- Ability to connect the necessary [services](services.md) depending on your needs
-- Allows flexible management of access for [administrators](project-administrators.md) to applications and services
+- Containing one or more [applications](applications.md). Application is a logical entity, allowing to break a project into separate subsystems. For instance, you can keep separate applications for different platforms or environments (test, production, etc.)
+- Enabling to connect the necessary [services](services.md) depending on your needs.
+- Allowing flexible access management for [administrators](project-administrators.md) to applications and services.
 
 ---
 
 ![Project menu](./assets/project-page.png)
 
-## Creating a new project {#new-project}
+## Creating a new project
 
-:::info
-
-In order to create a new project in Central, it's required an enabled two-factor authorization (2FA) with code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
-
-:::
+!!!note
+    To create a new project, it’s required to have a two-factor authorization (2FA) enabled with a code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
 
 ---
 
-To register new project press the **Create new project** button on **Start page** or press the same button in [Start menu](getting-started.md#start-menu).
+To register a new project:
+
+1. Press the **Create new project** button on the **Projects and services** page (or press the same button in the [Start menu](getting-started.md#start-menu).)
+
+
+![New project button](./assets/new-project-button.png)
+
+!!!note
+    To create a new project, it’s required to have a two-factor authorization (2FA) enabled with a code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
+
+2. Enter the project name (_Latin letters, numbers, and spaces are allowed_).
+
+!!!note
+    GAP will generate a project identifier automatically, based on the project name, making all symbols lowercase and replacing spaces with underscores. For the project named "Mind Games", the system will auto-generate the `mind_games` identifier.
+
+
+
+xxxx
 
 ![Creating a new project](./assets/project-new.png)
 
-Then enter a name for the project (only latin letters, numbers, spaces and underscores are allowed) and press the **Create** button to complete the creation.
 
-:::info
+3. Press the **Create** button.
 
-A project identifier will be generated automatically, based on the project name. All symbols will be made lowercase and spaces will be replaced with the underscore. Thus, for the project named "Mind Games" the `mind_games` identifier will be generated. Given ID are the truly unique identifiers for a project across all of Central.
 
-:::
 
 Done! The project has been created and you are its owner and administrator.
 

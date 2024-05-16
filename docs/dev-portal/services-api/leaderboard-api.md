@@ -2,13 +2,13 @@
 title: Leaderboard API
 ---
 
-Leaderboard API uses [json-rpc protocol](https://www.jsonrpc.org/specification). Leaderboard in another words is a rating list.
+Leaderboard is a rating list. The Leaderboard API uses the [json-rpc protocol](https://www.jsonrpc.org/specification).
 
 ## Client methods
 
 ### cln_get_leaderboard
 
-Method to request leaderboard representation.
+This method is to request representation of a leaderboard. The request example is shown below:
 
 ```json
 {
@@ -30,20 +30,21 @@ Method to request leaderboard representation.
   }
 }
 ```
+Request fields:
 
 - `appid` (_int_) - application id
 - `token` (_string_) - user token
-- `category` (_string_) - stat's name on which the rating is based
-- `table` (_string_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format).
-- `tableIndex` (_int_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params).
-- `gameMode` (_string_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format).
-- `start` (_int_) - start place (literally "get leaderboard from {start} place and lower")
+- `category` (_string_) -name of the stat on which the rating is based
+- `table` (_string_) - has the same meaning as described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format)
+- `tableIndex` (_int_) - has the same meaning as described in the [Userstat API](userstat-api.md#common-params)
+- `gameMode` (_string_) - has the same meaning, described in the [Userstat API](userstat-api.md#common-params) and [Unlocks format](../configs-format/unlocks-config-format.md#unlocks-format)
+- `start` (_int_) - start place (literally means "get leaderboard from \{start\} place and lower")
 - `count` (_int_) - count of users to return in respose
-- `resolveNick` (_int_) - use user id _(0)_ or user nickname _(1)_ as key of user's data
-- `platformFilter` (_string_) - can be used for separating leaderboard by platforms
-- `group` (_string_) - can be used for grouping users by a sign, e.g. by some leagues
+- `resolveNick` (_int_) - the flag to use user id _(0)_ or user nickname _(1)_ as a key for user's data
+- `platformFilter` (_string_) - allows for the separation of the leaderboard by platforms
+- `group` (_string_) - for grouping users by a sign, such as belonging to some leagues.
 
-Response
+Response:
 
 ```json
 {
@@ -93,20 +94,20 @@ Response
 }
 ```
 
-The response contains leaderboard's data, grouped by the user nickname (or the user's id).
+The response contains leaderboard data, grouped by the user nickname (or user id):
 
-- `self` - is present in the object of the user who sent the request
-- `idx` - user's place in the leaderboard
+- `self` - field is present in the response if the object belongs to the user who sent the request
+- `idx` - place of the user in the leaderboard
 - `_id` - user's unique id
 - `platform` - user's platform
 - `$` - some service object, which contains:
-  - `tag` - currently it is just an application id
-  - `table` - as request
-  - `tableIndex` - as request
-  - `mode` - as request
+  - `tag` - currently, it is an application id
+  - `table` - same as in the request
+  - `tableIndex` - same as in the request
+  - `mode` - same as in the request
   - `total` - total count of users in this leaderboard
-  - `startTime` - service info, start time of the leaderboard calculation (unix timestamp)
+  - `startTime` - service info, leaderboard calculation start time (unix timestamp)
   - `deltaTime` - service info, leaderboard calculation time (seconds)
-- `<some_stat_name>` - in the example above the _kills, exp, level_
+- `<some_stat_name>` - stat name ( _kills, exp, level_ in the example above)
   - `value_total` - stat's value
-- `endOfList` - in case of request more user count than can be returned, this flag is present. In the example was requested 3 of users, but only 2 users exist in the leaderboard.
+- `endOfList` - This flag will be present when the count of users in the request exceeds the number of users that can be returned. In the example above, 3 users have been requested, but only 2 users exist in the leaderboard.

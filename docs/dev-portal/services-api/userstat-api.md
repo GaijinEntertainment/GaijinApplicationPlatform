@@ -2,34 +2,45 @@
 title: Userstat API
 ---
 
-Userstat API uses [json-rpc protocol](https://www.jsonrpc.org/specification).
+This section describes the Userstat API that enables an interaction between the game and the statistics server. The Userstat API uses the [json-rpc protocol](https://www.jsonrpc.org/specification).
 
-## Description of common action parameters {#common-params}
+For details on using stats, see the [Player statistics](../configs-format/stats-config-format.md) section.
 
-### Required for all methods
+## Description of common action parameters
+
+### Parameters required for all methods
 
 - `appid` (_int_) - application id
-- `token` (_string_) - service or user token
+- `token` (_string_) - service token or user token
 
-### Required for specific methods
+### Parameters required for specific methods
 
-- `transactid` (_int_) - for some methods (e.g. [ChangeStats](#changestats)) this id must be unique for the packet of changes, in the case of a re-call this allows to avoid mistakes
-- `userid` (_int_) some methods (e.g. [ChangeStats](#changestats)) needs unique user id
-- `__body__` (_json object_) - object with request parameters for the unlocks/stats data
+- `transactid` (_int_) - transaction id; in some methods (e.g. [ChangeStats](#changestats)), this parameter must be unique for the packet of changes, which allows to avoid mistakes when recalling a method.
+- `userid` (_int_) - some methods (e.g. [ChangeStats](#changestats)) require unique user id.
+- `__body__` (_json object_) - object with request parameters for the unlocks/stats data.
 
-Also some methods use the same parameters:
+Note that some methods use the same parameters:
 
-- `table` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). It can be considered as a time-namespace for calculating statistics: _global_ - stats for all the time, _day_ - stats for one day, etc. Currently, only the _global_ table is available.
-- `index` (_int_) - table's index, for repeating tables (e.g. day table) sequence number.
-- `mode` (_string_) - has the same meaning, described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). Currently only the _default_ mode is available.
+- `table` (_string_) - has the same meaning as described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). It represents a time namespace for calculating statistics, such as:
+  - _global_ - stats for all time
+  - _day_ - stats for one day
+
+:::note
+
+Currently, only the _global_ `table` is available.
+
+:::
+
+- `index` (_int_) - table index; sequence number for repeating tables (e.g. day table).
+- `mode` (_string_) - has the same meaning as described in the [unlocks doc](../configs-format/unlocks-config-format.md#unlocks-format). Currently, only the _default_ mode is available.
 
 ## Admin/Server methods
 
-To avoid cheating, this methods is recomended to call from server and/or protected apps.
+To ensure the security, it is recommended to call these methods from the server and/or protected apps.
 
 ### ChangeStats
 
-Method for changing user statistics. The `token` parameter have to belong user with permissions to change stats. But the `userid` is the id of the user, which stats will change.
+Method for changing user statistics. The `token` parameter must belong to the user with permissions to change stats, while the `userid` parameter is the id of the user, which stats to be changed.
 
 ```json
 {
@@ -53,11 +64,12 @@ Method for changing user statistics. The `token` parameter have to belong user w
 
 Stats data placed in the `__body__` object.
 
-- `$tables` (_array of strings_) - parameters defining which table we want to change stats. This is optional parameter, if undefined stats will be changed for all tables.
-- `$mode` (_array of strings_) - parameters defining which modes we want to change stats.
-  The next key/value pairs means stat_name/increment_value. In case of "kill"-stat there is an explicit form of increment argument. So "exp" stat will be increment by 1 and "kills" by 10.
+- `$tables` (_string array_) - This optional parameter specifies the tables for which stats will be changed. If undefined, stats will be changed for all tables.
+- `$mode` (_string array_) - parameters that define which modes are used to change stats. For details on using statistic modes, click [here](../configs-format/modes-config-format).
+  The next key/value pairs means stat_name/increment_value. For the “kill” stat, you have the option to set the increment argument explicitly, where it can be incremented by 10, while the “exp” stat is incremented by 1.
 
-Another way to change stats is to use `"$set"`. In this case the value is assigned to the stat:
+
+Another way to change stats is to use `"$set"`, which enables you to assign a value to the stat:
 
 ```json
 "__body__": {
@@ -67,7 +79,7 @@ Another way to change stats is to use `"$set"`. In this case the value is assign
 }
 ```
 
-For the stats, calculating as [moving average](../configs-format/stats-config-format.md#moving-average) the `$avg` parameter is used:
+For the stats, calculating as [moving average](../configs-format/stats-config-format.md#moving-average), the `$avg` parameter is used:
 
 ```json
 "__body__": {
@@ -84,7 +96,7 @@ For the stats, calculating as [moving average](../configs-format/stats-config-fo
 
 #### Sessional stats
 
-For the sessional stats(e.g. kills per battle) the `$sessionId` parameter is used:
+For the sessional stats (e.g. "kills per battle"), the `$sessionId` parameter is used:
 
 ```json
 "__body__": {
@@ -99,7 +111,7 @@ For the sessional stats(e.g. kills per battle) the `$sessionId` parameter is use
 
 ### GetDescription
 
-Method to request stats and unlocks description.
+This method requests stats and unlocks description.
 
 ```json
 {
@@ -117,19 +129,17 @@ Method to request stats and unlocks description.
   <summary>Response</summary>
 
 :::note
-The following fields are present in response, but currently not supported:
+The following fields are present in the response, but we currently do not support them.
 
-- rewardsTag
-- currencyCode
-- minPrice
-- price
-- personal
-- purchaseRequirement
-- tags
-- ps4Id
-- xboxId
-
-:::
+    - rewardsTag
+    - currencyCode
+    - minPrice
+    - price
+    - personal
+    - purchaseRequirement
+    - tags
+    - ps4Id
+    - xboxId
 
 ```json
 {
@@ -289,7 +299,7 @@ Method to request user statistics.
 }
 ```
 
-The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If param value is `{}`, `[]`, `null` or absent - filter is empty, so all user stats for this filter type will be sent. If some values is set, the only suitable stats will be added to the response.
+The parameters  `tables`, `modes`, `stats` (string array) work as filter values. When the parameter value is `{}`, `[]`, `null` or absent, the filter becomes empty, resulting in all user stats being sent for this filter type. If some values are set, the response will only include the suitable stats as shown in the examples below:
 
 <details>
 <summary>Response on request without "params" <b>(without filters)</b>:</summary>
@@ -347,7 +357,7 @@ The parameters `tables`, `modes`, `stats` (_array of string_) work as filter. If
 
 ### GetUnlocks
 
-Method to request user's unlocks progress.
+This method is used to request the user’s unlocks progress.
 
 ```json
 {
@@ -362,7 +372,9 @@ Method to request user's unlocks progress.
 }
 ```
 
-The parameter `unlocks` (_array of string_) work as filter by unlock name. If param value is `{}`, `[]`, `null` or absent - filter is empty, so all user unlocks for this filter type will be sent. If value is set, the only suitable unlocks will be added to the response.
+The parameters  `unlocks` (_string array_) work as filter values. When the parameter value is `{}`, `[]`, `null` or absent, the filter becomes empty, resulting in all user unlocks being sent for this filter type. If the value is set, the response will only include the suitable unlocks as shown in the examples below:
+
+
 
 <details>
 <summary>Response filtering by unlock name:</summary>
@@ -390,7 +402,7 @@ The parameter `unlocks` (_array of string_) work as filter by unlock name. If pa
 
 </details>
 
-Request without filter:
+The request without filter:
 
 ```json
 {
@@ -438,18 +450,19 @@ Request without filter:
 
 </details>
 
-The response contains unlock's data, grouped by names.
+The response contains data of unlocks, grouped by names.
 
-- `stage` value indicates current unlock's stage.
+- `stage` value indicates the current unlock's stage.
 - `lastRewardedStage` is the last rewarded stage. So if unlock is not [auto rewardable](../configs-format/unlocks-config-format.md#auto-rewarding-unlocks) and there is a difference with `stage`, you can reward [unlock manually](#grantrewards).
-- `progress` shows the current value of [condition](../configs-format/unlocks-config-format.md#unlocks-format) and the `nextStage` shows which condition's value needs to go up to the next stage. For example: `gems` unlock has the `nextStage` equal to 192, and the `stage` equal to 95. That means what the stage 96 can be got when the `progress` reaches 192.
-- `timestamp` is the time of last unlock update(e.g after the reward).
-- [`lastSeenStage`](#setlastseenunlocks)
+- `progress` shows the current [condition](../configs-format/unlocks-config-format.md#unlocks-format) value and the `nextStage` shows which condition value is required to go up to the next stage. For example: for the `gems` unlock, the `nextStage` value is 192, and the `stage` value is 95. This means that you can reach `stage` 96 when the `progress` reaches 192.
+- `timestamp` is the time of the last unlock update (e.g. after the reward).
+- [lastSeenStage](#setlastseenunlocks) - the field is used for GUI-notifications for the user who has unseen unlocks that can be rewarded.
 
 ### ClnChangeStats
 
-Client method for changing own user statistics. Can change only stats with flag [`allowChangeFromClient`](../configs-format/stats-config-format.md#stats-format)
-The token parameter is user jwt token. External userid not allowed, action can change **only user own statistics**. Response contains user stats and unlocks.
+A client method for changing the user’s own statistics. With this method, you can change only stats with the [`allowChangeFromClient`](../configs-format/stats-config-format.md) flag.
+
+The token parameter is a jwt token user. An external user id is not allowed. This method can change **only the user's own statistics**. Response contains user stats and unlocks.
 
 ```json
 {
@@ -470,13 +483,14 @@ The token parameter is user jwt token. External userid not allowed, action can c
 }
 ```
 
-`$mode`, `$tables` (_array of strings_) - parameters defining for which mode and table we want to change stats, works like in [ChangeStats method](userstat-api.md/#changestats).
-$filter - parameter defining response filter. This is an aggregation of filter from GetStats and GetUnlocks methods, so the filter can contains next fields:
+- `$mode`, `$tables` (_array of strings_) - parameters defining for which mode and table stats are to be changed (work like in the [ChangeStats method](#changestats)).
+- `$filter` -  the response filter parameter - an aggregation of filters from the GetStats and GetUnlocks methods. The filter can contain the following fields:
 
-- `tables` (_array of string_) - statistics tables which will be added to response
-- `modes` (_array of string_) - statistics modes which will be added to response
-- `stats` (_array of string_) - stat names which will be added to response
-- `unlocks` (_array of string_) - unlock names which will be added to response
+   - `tables` (_string array_) - statistics tables which will be added to response
+   - `modes` (_string array_) - statistics modes which will be added to response
+   - `stats` (_string array_) - stat names which will be added to response
+   - `unlocks` (_string array_) - unlock names which will be added to response
+
 
 <details>
 <summary>Response:</summary>
@@ -522,8 +536,11 @@ WIP
 
 ### GrantRewards
 
-Method for the awarding user by unlock.
-Lets take a look onto `gems` unlock from [GetUnlocks](#getunlocks) response. The **stage** exceeds the `lastRewardedStage`. That means it can be rewarded with following request:
+
+This method is for awarding a user by unlock.
+
+Let’s consider the `gems` unlock from the [GetUnlocks](#getunlocks) response. The **stage** exceeds the `lastRewardedStage`, so it can be rewarded with the following request:
+
 
 ```json
 {
@@ -576,11 +593,12 @@ Response:
 
 </details>
 
-As seen, the response format is the same as for the [GetUnlocks](#getunlocks). `gems`-unlock is succesfully rewarded and now if we call [GetStats](#getstats), `gems`-stat value will be **95**, because as seen from [GetDescription](#getdescription) every unlock stage updates `gems`-stat by 1.
+As seen from the example above, the response format is the same as for the [GetUnlocks](#getunlocks); the `gems` unlock is rewarded successfully. Now, if you call [GetStats](#getstats), the `gems` stat value will be **95**, because every unlock stage updates the `gems` stat by 1 (see [GetDescription](#getdescription) ).
+
 
 ### SetLastSeenUnlocks
 
-Method for changing unlock's `lastSeenStage` field. This field can be useful for GUI-notifications for the user if he has unseen unlocks, which can be rewarded. Mark what the unlock was seen by user with request:
+The method is for changing the unlock’s `lastSeenStage` field. This field is useful for GUI-notifications for a user who has unseen unlocks that can be rewarded. Mark which the unlock was seen by the user with the following request:
 
 ```json
 {

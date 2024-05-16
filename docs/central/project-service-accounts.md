@@ -2,7 +2,14 @@
 title: Service accounts
 ---
 
-A service account is a special kind of account that can be used by a external applications or services to manage resources within the project. You can't use service accounts to log in to the system in the usual way. However, you can assign roles for these accounts, just as you do for regular users.
+
+Regular users normally create accounts with user roles assigned in the application.
+
+Developers can also create the so-called **service accounts** in order to perform some service functions, like testing. When you create a service account, the system generates a certain user token for this service account.
+
+A service account is a special type of user account that external applications or [services](services.md) can utilise to manage resources within the project.  Such a user cannot log in to the system with e-mail and password, but it has a UID and a system-generated token assigned to the service account. You can  [assign roles](roles-and-permissions_manage.md#assigning-roles-to-application-users) for such accounts, just as you do for regular users. 
+
+ A developer can give to the service account permissions to perform certain functions in the project. A developer can use the service account token and UID to launch sessions on behalf of the service account with the assigned permission.
 
 ---
 
@@ -18,11 +25,8 @@ When you create a new service account, you can specify a display name, comment, 
 
 ![Creating a service account](./assets/service-account-token.png)
 
-:::caution
-
-For your protection, you should never share your token with anyone. If you have lost your token or it has been compromised, you can generate a new token for the account.
-
-:::
+!!!warning
+    For your protection, you should never share your token with anyone. If you have lost your token or it has been compromised, you can generate a new token for the account.
 
 ## Generating a new token for an existing service account
 

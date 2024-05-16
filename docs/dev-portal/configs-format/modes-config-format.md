@@ -39,12 +39,11 @@ To use and store statistics you need to add modes description to [modes config](
 #### Optional fields:
 
 - `leaderboard` (_string_) - type of the leaderboard creating for this mode, possible values:
-  - "NONE" - leaderboard will not be generated for this mode.
-  - "SIMPLE" - generate leaderboard without _groups_ for this mode.
-  - "GROUPING" - generate groups leaderboard for this mode. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format.md#leaderboard-group)
+    - "NONE" - leaderboard will not be generated for this mode.
+    - "SIMPLE" - generate leaderboard without _groups_ for this mode.
+    - "GROUPING" - generate groups leaderboard for this mode. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format.md#leaderboard-group)
 - `public` (_bool_) - determines whether the stats for this mode should be visible to another user.
 
-  :::note
-  This work only for stats with `showForAll = true`
-  To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).
-  :::
+    !!!note
+        This work only for stats with `showForAll = true`
+        To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).

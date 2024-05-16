@@ -3,12 +3,12 @@ title: Tables config format
 ---
 
 # Statistic tables
-Tables combined with [modes](modes-config-format.md) makes work with [user statistic](stats-config-format.md) very flexible and abstract. Table is a time period container for statistics.  
-For example:  
-* day
-* week
-* season
-* global
+Tables combined with [modes](modes-config-format.md) makes work with [user statistic](stats-config-format.md) very flexible and abstract. Table is a time period container for statistics. For example:  
+
+- day
+- week
+- season
+- global
 
 Each table contain all game modes which contain user statistics.
 So you can use user statistic on each table independent, for [Leaderboards](../gui/leaderboard.md) or for [User achievements](unlocks-config-format.md)
@@ -42,38 +42,39 @@ To use and store statistics you need to add tables description to [tables config
 #### Optional fields:
 
 - `leaderboard` (_string_) - type of the leaderboard creating for this table, possible values:
-  - "NONE" - leaderboard will not be generated for this table.
-  - "SIMPLE" - generate leaderboard without _groups_ for this table.
-  - "GROUPING" - generate groups leaderboard for this table. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format.md#leaderboard-group)
+    - "NONE" - leaderboard will not be generated for this table.
+    - "SIMPLE" - generate leaderboard without _groups_ for this table.
+    - "GROUPING" - generate groups leaderboard for this table. Group can be used to implement leagues or buckets in leaderboard. See [Leaderboard group](stats-config-format.md#leaderboard-group)
 - `public` (_bool_) - determines whether the stats for this table should be visible to another user.
-  :::note
-  This work only for stats with `showForAll = true` and `public` modes  
-  To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).  
-  :::
+
+    !!!note
+        This work only for stats with `showForAll = true` and `public` modes  
+        To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).  
+
 - `period` (_string_) - the period of the table, next season will start automatically after period time. Used only with `timeline` parameter. [Example](#periodic)  
   Format: number 1-16 digits and postfix(`s` - seconds, `m` - minutes, `h` - hours, `d` - days, `w` - weeks). For example: `12h`, `1d`, `1w`.  
 - `indexOffset` (_int_) - table index offset, useful if you want to remove the old season. Only used with `timeline` parameter. [Example](#index-offset).  
-:::caution
-You can use only one parameter per table: `timeline`, `autoSlaves`, `slave`
-:::
-- `timeline` (_array_) - array of table time periods that are set manually. [Example](#seasons).  
+!!!warning
+    You can use only one parameter per table: `timeline`, `autoSlaves`, `slave`
+
+- `timeline` (_array_) - array of table time periods that are set manually. [Example](#season-tables).  
   Array parameter is a json object that has the following fields:  
-  * `start` (_string_) - date of the table time period start. Date example: `2020-05-15T11:00:00Z`
-  * `end` (_string_) - date of the table time period end. Optional parameter, if not set table will be exist always.
+    * `start` (_string_) - date of the table time period start. Date example: `2020-05-15T11:00:00Z`
+    * `end` (_string_) - date of the table time period end. Optional parameter, if not set table will be exist always.
 - `slave` (_json object_) - block of parameters to create dependent table. See [Example](#slave-tables).  
   Slave table parameters:
-  * `master` - name of the master table.
-  * `duration` - duration(end - start) of the table timeline.
-  * `timeOffset` - offset of slave start time from master table start time.
+    * `master` - name of the master table.
+    * `duration` - duration(end - start) of the table timeline.
+    * `timeOffset` - offset of slave start time from master table start time.
 - `autoSlaves` (_array_) - array of the table generators. Each array element generate a sequence of tables. See [Examples](#auto-slave-tables).  
   Array parameter is a json object that has the following fields:  
-  * `period` - the period of generated tables, each generated table will have duration = period.
-  * `name` - the prefix of the name of generated tables, index will be added automatically. For example "name":"_week_" will generate tables: _week1_, _week2_, etc.
-  * `persistent` - if true all generated tables will have end as master table, otherwise end = start + period.
+    * `period` - the period of generated tables, each generated table will have duration = period.
+    * `name` - the prefix of the name of generated tables, index will be added automatically. For example "name":"_week_" will generate tables: _week1_, _week2_, etc.
+    * `persistent` - if true all generated tables will have end as master table, otherwise end = start + period.
 
-:::caution
-When the table is end all table statistics are cleared. In the next time period of the table, all statistics will be accumulated again.
-:::
+!!!warning
+    When the table is end all table statistics are cleared. In the next time period of the table, all statistics will be accumulated again.
+
 
 ## Table examples
 
@@ -251,6 +252,5 @@ Will be generated 10 tables:
   }
 ]
 ```
-:::caution
-Maximum number of automatically generated slave tables = 100.
-:::
+!!!warning
+    Maximum number of automatically generated slave tables = 100.

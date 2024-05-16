@@ -12,11 +12,10 @@ To fork a repository, navigate to the [repository page](https://github.com/Gaiji
 
 Once you have forked the repository, you can make changes to it. You can do this by cloning the repository to your local machine and making changes using your favorite text editor or IDE.
 
-:::info
-The documentation portal is built with [Docusaurus](https://docusaurus.io), a framework that optimizes documentation creation. If you’re not familiar with Docusaurus, it’s recommended to check out the [documentation](https://docusaurus.io/docs) on their website to better understand Docusaurus, how it works, its structure, and more details.
-:::
+!!!info
+    The documentation portal is built with [MkDocs](https://www.mkdocs.org/), a fast, simple and downright gorgeous static site generator that's geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.
 
-The main language of the documentation is English. All translation data for each locale is stored in `i18n/[locale]` folder. More about internationalization support [read here](https://docusaurus.io/docs/i18n/introduction).
+The main language of the documentation is English. Update on how to translate this documentation will follow.
 
 After you have made your changes, you should test them to make sure they look as intended.
 
@@ -24,34 +23,28 @@ After you have made your changes, you should test them to make sure they look as
 
 To preview your changes as you edit the files, you can run a local development server that will serve website and reflect the latest changes.
 
-First of all, run your package manager's install command:
+Please follow MkDocs' [Installation Guide](https://www.mkdocs.org/user-guide/installation/) to install MkDocs locally.
+
+Then install additional dependencies we use in our docs.
 
 ```bash
-npm install
-# or
-yarn install
+pip install -r requirements.txt
 ```
 
-And then run start the site in watch mode:
+And then start mkdocs internal server:
 
 ```bash
-npm run start
-# or
-yarn run start
+mkdocs serve
 ```
 
-Browser window will open at [http://localhost:3000](http://localhost:3000).
-
-:::info
-If you make changes to the localized version of the documentation, you should run the development server as follows:
-
-```bash
-npm run start -- --locale ru
-# or
-yarn run start --locale ru
+You will see some lines of output ending with
+```
+INFO    -  Documentation built in 0.39 seconds
+INFO    -  [17:06:49] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO    -  [17:06:49] Serving on http://127.0.0.1:8000/
 ```
 
-:::
+Point your browser to the address in the output above ([http://127.0.0.1:8000/](http://127.0.0.1:8000/) in our example).
 
 ### Using internal links
 
@@ -70,80 +63,11 @@ When using internal links, we strongly recommend the following rules:
   [Cherry](../cherry.md)
   ```
 
-For more information you can read [here](https://docusaurus.io/docs/markdown-features/links).
+For more information you can read [here](https://www.mkdocs.org/user-guide/writing-your-docs/#internal-links).
 
 ### Generating OpenAPI documentation
 
-This portal allows you to generate documentation sections based on the OpenAPI specification. In order to integrate OpenAPI follow these steps:
-
-1. Put the specification file in the `openapi` directory at the root of this repository:
-
-   ```
-   ├─ ...
-   ├─ docs
-   ├─ i18n
-   ├─ openapi
-   │  ├─ ...
-   │  └─ awesome-service.yaml   <--
-   ```
-
-   Both YAML and JSON file formats of the OpenAPI specification are supported.
-
-2. Set up the generation of documentation pages based on this file by adding the `docusaurus.config.js` configuration file as follows:
-
-   ```js
-   plugins: [
-     // ...
-     [
-       'docusaurus-plugin-openapi',
-       {
-         id: 'awesome-service-api',
-         path: 'openapi/awesome-service.yaml',
-         routeBasePath: 'api/awesome-service',
-       },
-     ],
-   ],
-   ```
-
-   In this example, the documentation will be generated at `/api/awesome-service`.
-
-3. To place a link to the generated documentation section in the portal's header, you need to add the following lines to the `docusaurus.config.js` file:
-
-   ```js
-   themeConfig: {
-     // ...
-     navbar: {
-       // ...
-       items: [
-         // ...
-         {
-           label: 'API',
-           position: 'left',
-           items: [
-             // ...
-             {
-               to: 'api/awesome-service',
-               label: 'Awesome Service API',
-             },
-           ],
-         },
-       ],
-     },
-   },
-   ```
-
-4. To place a link to the OpenAPI specification inside the sidebar of the common documentation portal, add the `sidebars.js` file as follows:
-   ```js
-   docs: [
-     // ...
-     'awesome-service/overview',
-     {
-       type: 'link',
-       label: 'API reference',
-       href: '/api/awesome-service',
-     },
-   ],
-   ```
+WIP
 
 ### Deploying to GitHub Pages
 
