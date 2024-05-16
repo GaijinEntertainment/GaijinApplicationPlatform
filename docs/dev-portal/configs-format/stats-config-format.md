@@ -21,15 +21,15 @@ To use and store statistics you need to add stats description to [stats config](
 
   "minValue": 0,                                // optional
   "maxValue": 1,                                // optional
-  "defValue": 0                                 // optional, default = 0
+  "defValue": 0,                                // optional, default = 0
   "window": 20,                                 // optional
   "onlyIncrement": true,                        // optional, default = false
   "leaderboard": true,                          // optional, default = false
   "showForAll": true,                           // optional, default = false
-  "allowChangeFromClient": false                // optional, default = false
+  "allowChangeFromClient": false,               // optional, default = false
   "meta": {},                                   // optional
-  "condition": "s.death ? s.kills/s.death : 0"  // optional
-  "gameModesEnabled": ["solo"]                  // optional
+  "condition": "s.death ? s.kills/s.death : 0", // optional
+  "gameModesEnabled": ["solo"],                 // optional
   "gameModesDisabled": ["duo"]                  // optional
 }
 ```
@@ -38,9 +38,9 @@ To use and store statistics you need to add stats description to [stats config](
 
 - `name` (_string_) - name of the stat, must be unique.
 - `type` (_string_) - type of the stat, possible values:
-  - "INT" - stat with integer value.
-  - "FLOAT" - stat with float value.
-  - "AVGRATE" - stats calculate as moving average.
+    - "INT" - stat with integer value.
+    - "FLOAT" - stat with float value.
+    - "AVGRATE" - stats calculate as moving average.
 
 #### Optional fields:
 
@@ -51,14 +51,16 @@ To use and store statistics you need to add stats description to [stats config](
 - `onlyIncrement` (_bool_) - if = true, the value of the stat can't decrease.
 - `leaderboard` (_bool_) - determines whether the stat should be displayed in the leaderboard.
 - `showForAll` (_bool_) - determines whether the stat should be visible to another user.
-  :::note
-  To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).
-  Stats will be returned only for **public** [tables](tables-config-format.md#table-format) and [modes](modes-config-format.md#mode-format).
-  :::
+
+    !!!note
+        To request another user statistics use [AnoGetStats action](../services-api/userstat-api.md#anogetstats).
+        Stats will be returned only for **public** [tables](tables-config-format.md#table-format) and [modes](modes-config-format.md#mode-format).
+
 - `allowChangeFromClient` (_bool_) - determines the possibility of changing stat by the client.
-  :::caution
-  use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](../services-api/userstat-api.md#clnchangestats)
-  :::
+
+    !!!warning
+        use this flag only for non-important statistics or at your own risk, because the client is not protected from hacking, so the statistics can be cheating by the user himself. For changing stat by client use action [ClnChangeStats](../services-api/userstat-api.md#clnchangestats)
+
 - `meta` (_json object_) - field for custom game data. Can be used to pass arbitrary data to the game client. The value must be a json object
 - `condition` (_string_) - if set, the stat value calculate from other stats specified in condition. Calculable stats can't be set or change outside, if you try change, stat will remain unchanged.
 - `gameModesEnabled` (_array of string_) - if set, the stat will be created and changed only for the specified modes.

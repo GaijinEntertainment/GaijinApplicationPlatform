@@ -4,41 +4,39 @@ title: Projects
 
 ## New Project Registration
 
-- Go to [https://central-admin.gaijin.net](https://central-admin.gaijin.net/)
-- Press the **Add project** button
+1. Go to [https://central-admin.gaijin.net](https://central-admin.gaijin.net/)
+1. Press the **Create new project** button
+    ![New project button](./assets/new-project-button.png)
 
-:::info
+    !!!note
+        To create a new project, it’s required to have a two-factor authorization (2FA) enabled with a code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
 
-In order to create a new project in Central, it's required an enabled two-factor authorization (2FA) with code generator application in your Gaijin account. This is an additional security measure that will help protect your account and prevent unauthorized access.
+1. Enter the project name (_Latin letters, numbers, and spaces are allowed_)
 
-:::
+    ![Creating a new project](./assets/project-new.png)
 
-- Enter the project name (_Latin letters, numbers, and spaces are allowed_)
+    !!!note
+        GAP will generate a project identifier automatically, based on the project name, making all symbols lowercase and replacing spaces with underscores. For the project named "Mind Games", the system will auto-generate the "mind_games" identifier.
 
-:::info
+1. Press the **Create** button
 
-A project identifier will be generated automatically, based on the project name. All symbols will be made lowercase and spaces will be replaced with the underscore. Thus, for the project named "Mind Games" the mind_games identifier will be generated
+Done. You created the project, and you are its owner.
 
-:::
-
-- Press the **Create** button
-
-Done. The project has been created and you are its owner and administrator.
+![Project Administrators](./assets/add-project-admin1.png)
 
 ## Project Owners and Administrators
 
-A project can have any number of administrators, one of them being its owner. Administrators have full permissions within the project except for being unable to remove the project owner.
+Having created a project, you can manage project users by adding project **administrators** and project **owners**. There can be multiple project administrators and owners, but at least one project owner. Administrators have full permissions within the project except for being unable to remove the project owner.
+The difference between Project owner and Project administrator roles as follows: 
 
-![Project Administrators](./assets/project-admins.png)
+- **Project owner** - can only add (or remove) administrators and other owners.
+- **Project administrator** - can manage any entity in the project, but not the owner.
 
-There are two ways to add a new administrator:
+![Project Administrators](./assets/add-project-admin1.png)
 
-- Knowing their numerical user identifier (user_id), add them using the “Add administrator” button
-- Generate an invitation and send the link to your colleague. After they accept the invitation, their data will need to be confirmed.
+For details on managing project administrators, refer to the [Owners and Administrators](../central/project-owners-administrators.md) section.
 
-On the screenshot above, you can see the project owner John Smith and his assigned administrator Alice Fox. Further above, in the “Invite” section, you can see an invitation link and a request from Bob Kinley waiting for the administrators’ approval.
+!!!tip
+    Many users use nicknames in their accounts. Use the possibility of editing a user’s display name to avoid a confusion about who is who.
 
-:::tip
-Many users use nicknames in their accounts. Use the possibility of changing a user’s Display Name so as not to get confused about who is who.
-![Changing user’s display name](./assets/display-name.png)
-:::
+    ![Changing user’s display name](./assets/display-name1.png)

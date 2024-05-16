@@ -1,0 +1,71 @@
+site_name: Gaijin Application Platform
+nav:
+  - Home: index.md
+  - "Newcomer's Guide":
+    - 'newcomers-guide/getting-started.md'
+    - 'newcomers-guide/projects.md'
+    - 'newcomers-guide/applications.md'
+    - 'newcomers-guide/services.md'
+    - 'newcomers-guide/uploading-to-gdn.md'
+  - 'Basic Concepts':
+    - 'basic_concepts/roles-and-permissions_concepts.md'
+    - 'basic_concepts/using_JWT.md'
+  - 'Dev Portal':
+    - 'dev-portal/getting-started.md'
+    - 'Gui Description':
+      - 'dev-portal/gui/configs-management.md'
+      - 'dev-portal/gui/leaderboard.md'
+      - 'dev-portal/gui/user-management.md'
+      - 'dev-portal/gui/services-info.md'
+      - 'dev-portal/gui/console.md'
+    - 'Configs format':
+      - 'dev-portal/configs-format/tables-config-format.md'
+      - 'dev-portal/configs-format/modes-config-format.md'
+      - 'dev-portal/configs-format/stats-config-format.md'
+      - 'dev-portal/configs-format/unlocks-config-format.md'
+      - 'dev-portal/configs-format/contacts-config-format.md'
+      - 'dev-portal/configs-format/profile-config-format.md'
+      - 'dev-portal/configs-format/items-config-format.md'
+    - 'Services API':
+      - 'dev-portal/services-api/userstat-api.md'
+      - 'dev-portal/services-api/leaderboard-api.md'
+      - 'dev-portal/services-api/contacts-api.md'
+      - 'dev-portal/services-api/inventory-api.md'
+      - 'dev-portal/services-api/market-api.md'
+  - 'Central':
+    - 'central/getting-started.md'
+    - 'Project':
+        - 'central/project.md'
+        - 'central/project-owners-administrators.md'
+        - 'central/project-service-accounts.md'
+    - 'Application':
+      - 'central/applications.md'
+      - 'central/roles-and-permissions_manage.md'
+      - 'central/application-users.md'
+      - 'central/application-api-keys.md'
+    - 'central/services.md'
+    - 'central/user-profile.md'
+    - 'central/logging.md'
+  - 'Gaijin Store and Auth': '/projects/yuplay/en/latest/'
+  - 'Best practices':
+    - 'best_practices/JWT_security.md'
+  - 'how-to-contribute.md'
+  - 'Toolset Download': 'https://github.com/GaijinEntertainment/GaijinApplicationPlatform/releases'
+theme:
+  name: material
+  hljs_languages:
+    - yaml
+    - json
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  palette:
+    primary: teal
+  features:
+    - search.highlight
+plugins:
+  - search:
+      enabled: true
+markdown_extensions:
+  - admonition
+  - meta
+  - pymdownx.superfences

@@ -4,7 +4,7 @@ title: Users management
 
 This page serves as a powerful tool for user management, allowing administrators to effectively manage their users in the application. It includes a paginated list of users with a filtering section that allows the administrator to search for users by project, role, or user ID. In addition, there is the ability to add or remove users, as well as the flexibility to manage each user's roles. The page also allows administrators to import and export records.
 
-## Filtering list of users {#filter}
+## Filtering list of users
 
 ### "Scope" selector
 
@@ -36,7 +36,7 @@ Allows you to search for an individual user by `user_id`. As a result of a succe
 |   App roles   | `news.editor` | Get the list of users who have a `news.editor` role at the root of this application               |
 | `sudoku_test` |   Any role    | Get the list of users who have at least one role in the `sudoku_test` project of this application |
 
-## List of users {#list-of-users}
+## List of users
 
 ![List of users](./assets/app-users.png)
 
@@ -52,17 +52,16 @@ Each line contains the following elements:
 
 4. **Actions** on the user - open the user editing page, as well as delete the user from the application
 
-### Saving changes to the user list {#saving-users-changes}
+### Saving changes to the user list
 
 Changes in access rights do not happen instantly. Instead, the performed operations (setting or deleting the role, as well as changing the time limit) are written to the stack and are applied only after you press the **Save changes** button. The button displays a counter of users for which edits will be made, and the changed fields are highlighted with special shading. You can also rollback the changes by pressing the **Undo changes** button.
 
-:::note
-You can make changes on more than one page.
-:::
+!!!note
+   You can make changes on more than one page.
 
 After clicking on the **Save changes** button, a window with an overview of the access rights changes for each individual user will be displayed. The **Save** button will apply the changes to the server.
 
-### Adding new users {#adding-new-users}
+### Adding new users
 
 The **Add User** button will open a modal window with `user_id` input. If the user is successfully found, the information about him will be displayed below and the **Continue** button will become active.
 
@@ -74,12 +73,12 @@ The next step will display a modal window with a choice of roles for the new use
 
 ![Select roles for user](./assets/app-users-roles.png)
 
-:::info
-If the selected user already exists in the list of users of this application, an alert window about record conflict will be shown.
-![User conflict](./assets/app-users-conflict.png)
-:::
+!!!note
+      If the selected user already exists in the list of users of this application, an alert window about record conflict will be shown.
+      ![User conflict](./assets/app-users-conflict.png)
 
-## Export/Import users {#export-import-users}
+
+## Export/Import users
 
 To make it easy for the administrator to export some (or all) users from one application to another, there is an export option.
 
@@ -89,9 +88,8 @@ To export records, select the desired users using the checkboxes.
 
 ![Export](./assets/app-users-export.png)
 
-:::note
-You can pick users from more than one page.
-:::
+!!!note
+      You can pick users from more than one page.
 
 Then click on the **Export** button (where the counter of selected records will be displayed) to open export modal.
 

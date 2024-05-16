@@ -2,20 +2,20 @@
 title: Contacts API
 ---
 
-Contact API uses [json-rpc protocol](https://www.jsonrpc.org/specification).
+The Contact API uses [json-rpc protocol](https://www.jsonrpc.org/specification).
 
 ## Description of common action parameters
 
-### Required for all methods
+### Parameters required for all methods
 
 - `token` (_string_) - user token
-- `appid` (_int_) - the application id, you can see this parameter in [GaijinCentral](https://central-admin.gaijin.net) in _Application_ tab see _External IDs_ value.
+- `appid` (_int_) - application id. You can see this parameter in [GaijinCentral](https://central-admin.gaijin.net) (_External IDs_ value in the _Applications_ tab).
 
 ## Client methods
 
 ### Login
 
-For work with contact, the user must log in to the contact server. Without this, the contacts API may not work properly.
+To work with contact, the user must log in to the contact server. Otherwise, the Contacts API may not work properly.
 
 ```json
 {
@@ -46,13 +46,14 @@ For work with contact, the user must log in to the contact server. Without this,
 
 </details>
 
-## Get contact list
+## Getting a contact list
 
-Action return the contact list for the user.
-Action specific parameters:
+This action returns a contact list for the user. The method uses the following specific parameters:
 
-- `groups` (_string list_) - works like filter, response contains only groups that are contained in the _groups_ parameter. If the _groups_ parameter is not defined, the response contains all groups allowed for the game.
-- `status` (_string list_) - works like filter, response contains only status that are contained in the _status_ parameter. If the \__status_ parameter is not defined, the response contains all types. See more about [contact status](#contact-status)
+- `groups` (_string list_) - works like a filter; the response contains only groups that are contained in the `groups` parameter. If this parameter is not present, the response will include all groups allowed for the game.
+- `status` (_string list_) - works like a filter; the response contains only status values that are contained in the `status` parameter. If this parameter is not present, the response will include all status values allowed for the game.
+
+See more about [contact status](#contact-status).
 
 ```json
 {
@@ -108,7 +109,7 @@ Action specific parameters:
 ### Action parameters required for all methods in this section:
 
 - `uid` (_int_) - the unique identifier of another user
-- `group` (_string_) - the name of the group, now allowed only one group equal to the name of the game
+- `group` (_string_) - the group name; only one group can be used in your game (see [Contacts config](../configs-format//contacts-config-format.md) for details).
 
 All actions in this part return "OK" or error
 
@@ -141,15 +142,14 @@ All actions in this part return "OK" or error
 
 </details>
 
-In examples below all actions are sent by two users:
-
-- **user1** with uid: 11111111 sent friendship request.
-- **user2** with uid: 22222222 who approves or rejects friendship request.
+In the examples that follow, two users perform all actions:
+- **user1** with `uid` 11111111 sends a friendship request
+- **user2** with `uid` 22222222 approves (or rejects) the friendship request
 
 ### Friendship request
 
-User id for the friendship request specified in the _uid_ parameter.
-**user1** send friendship request:
+The user for a friendship request is specified by the `uid` parameter. For example:
+**user1** sends the friendship request:
 
 ```json
 {
@@ -165,10 +165,10 @@ User id for the friendship request specified in the _uid_ parameter.
 }
 ```
 
-### Cancel friendship request
+### Cancelling a friendship request
 
-Cancel a friendsip request to the user specified in the _uid_ parameter.
-**user1** cancel friendship request:
+You can cancel a friendship request to the user specified by the `uid` parameter.
+For example, **user1** cancels the friendship request:
 
 ```json
 {
@@ -184,10 +184,9 @@ Cancel a friendsip request to the user specified in the _uid_ parameter.
 }
 ```
 
-### Approve friendship request
+### Approving a friendship request
 
-Approve a friendship request from the user specified in the _uid_ parameter.
-**user2** approve friendship request from user1:
+This method approves a friendship request from the user specified by the `uid` parameter. In the below example, **user2** approves the friendship request from **user1**:
 
 ```json
 {
@@ -203,10 +202,10 @@ Approve a friendship request from the user specified in the _uid_ parameter.
 }
 ```
 
-### Reject friendship request
+### Rejecting a friendship request
 
-Reject a friendship request from the user specified in the _uid_ parameter.
-**user2** reject friendship request from user1:
+The following method is to reject a friendship request from the user specified by the `uid` parameter.
+For example, **user2** is rejecting the friendship request from **user1**:
 
 ```json
 {
@@ -222,10 +221,10 @@ Reject a friendship request from the user specified in the _uid_ parameter.
 }
 ```
 
-### Delete from friend list
+### Deleting a user from the friends list
 
-Delete the user, specified in the _uid_ parameter, from friends list.
-**user1** delete user2 from friend list:
+You can delete the user, specified by the `uid` parameter, from the friends list.
+**user1** deletes **user2** from the friends list:
 
 ```json
 {
@@ -241,10 +240,10 @@ Delete the user, specified in the _uid_ parameter, from friends list.
 }
 ```
 
-### Add to blacklist
+### Adding a user to a blacklist
 
-Added the user, specified in the _uid_ parameter, to the blacklist.
-**user1** add user2 to the blacklist:
+The following method adds the user specified by the `uid` parameter to the blacklist.
+**user1** adds **user2** to the blacklist:
 
 ```json
 {
@@ -260,10 +259,10 @@ Added the user, specified in the _uid_ parameter, to the blacklist.
 }
 ```
 
-### Remove from blacklist
+### Removing a user from a blacklist
 
-Remove the user, specified in the _uid_ parameter, from blacklist.
-**user1** remove user2 from blacklist:
+The method removes the user, specified by the `uid` parameter, from the blacklist.
+**user1** removes **user2** from the blacklist:
 
 ```json
 {
@@ -281,78 +280,80 @@ Remove the user, specified in the _uid_ parameter, from blacklist.
 
 ## Contact status
 
-### Possible contact type values:
+### Contact status values
 
-- `requestsToMe` - the status of the user who received the friend request
-- `myRequests` - the status of the user who send the friend request
-- `approved` - status means users are friends
-- `rejectedByMe` - the status of the user who rejected the friend request
-- `myRejectedRequests` - the status of the user whose friend request was rejected
-- `meInBlacklist` - the status of the user whose friend request was added to the blacklist
-- `myBlacklist` - the status of the user who added to the blacklist
+The following contact status values are possible:
 
-### Status change scheme
+- _requestsToMe_ - status of the user who received a friendship request.
+- _myRequests_ - status of the user who sent a friendship request.
+- _approved_ - this status means that the users are friends.
+- _rejectedByMe_ - status of the user who rejected a friend request.
+- _myRejectedRequests_ - status of the user whose request for friendship was rejected.
+- _meInBlacklist_ - status of the user whose friendship request got added to the blacklist.
+- _myBlacklist_ - status of the user who added other user to the blacklist.
 
-#### user1 sends a friendship request. user2 approves friendship
+### Contacts status change scheme
+
+#### user1 sends a friendship request; user2 approves it:
 
 |                                                         |                    user 1                    |                    user2                    |
 | :------------------------------------------------------ | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                              |                     `-`                      |                     `-`                     |
+| **status**                                              |                     _-_                      |                     _-_                     |
 | user1 -> [Friendship request](#friendship-request)      |                 response: OK                 |                                             |
-| **status**                                              |                 `myRequests`                 |               `requestsToMe`                |
+| **status**                                              |                 _myRequests_                 |               _requestsToMe_                |
 | user2 -> [Approve request](#approve-friendship-request) |                 response: OK                 |                                             |
-| **status**                                              |                  `approved`                  |                 `approved`                  |
+| **status**                                              |                  _approved_                  |                 _approved_                  |
 
-#### user1 sends a friendship request. user2 rejects it
+#### user1 sends a friendship request; user2 rejects it:
 
 |                                                       |                    user 1                    |                    user2                    |
 | :---------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| status                                                |                     `-`                      |                     `-`                     |
+| **status**                                                |                     _-_                      |                     _-_                     |
 | user1 -> [Friendship request](#friendship-request)    |                 response: OK                 |                                             |
-| **status**                                            |                 `myRequests`                 |               `requestsToMe`                |
+| **status**                                            |                 _myRequests_                 |               _requestsToMe_                |
 | user2 -> [Reject request](#reject-friendship-request) |                 response: OK                 |                                             |
-| **status**                                            |             `myRejectedRequests`             |               `rejectedByMe`                |
+| **status**                                            |             _myRejectedRequests_             |               _rejectedByMe_                |
 
-#### user1 resubmits friendship request after being rejected
+#### user1 resubmits friendship request after being rejected:
 
 |                                                    |                    user 1                    |                    user2                    |
 | :------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                         |             `myRejectedRequests`             |               `rejectedByMe`                |
+| **status**                                         |             _myRejectedRequests_             |               _rejectedByMe_                |
 | user1 -> [Friendship request](#friendship-request) |                 response: OK                 |
-| **status**                                         |                 `myRequests`                 |               `requestsToMe`                |
+| **status**                                         |                 _myRequests_                 |               _requestsToMe_                |
 
-#### user1 sends a friendship request and than cancels it
+#### user1 sends a friendship request and then cancels it:
 
 |                                                       |                    user 1                    |                    user2                    |
 | :---------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                            |                     `-`                      |                     `-`                     |
+| **status**                                            |                     _-_                      |                     _-_                     |
 | user1 -> [Friendship request](#friendship-request)    |                 response: OK                 |                                             |
-| **status**                                            |                 `myRequests`                 |               `requestsToMe`                |
+| **status**                                            |                 _myRequests_                 |               _requestsToMe_                |
 | user1 -> [Cancel request](#cancel-friendship-request) |                 response: OK                 |                                             |
-| **status**                                            |                     `-`                      |                     `-`                     |
+| **status**                                            |                     _-_                      |                     _-_                     |
 
-#### user1 sends a friendship request. user2 adds it to the blacklist
+#### user1 sends a friendship request; user2 adds it to the blacklist:
 
 |                                                    |                    user 1                    |                    user2                    |
 | :------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                         |                     `-`                      |                     `-`                     |
+| **status**                                         |                     _-_                      |                     _-_                     |
 | user1 -> [Friendship request](#friendship-request) |                 response: OK                 |                                             |
-| **status**                                         |                 `myRequests`                 |               `requestsToMe`                |
+| **status**                                         |                 _myRequests_                 |               _requestsToMe_                |
 | user2 -> [Add to blacklist](#add-to-blacklist)     |                 response: OK                 |                                             |
-| **status**                                         |               `meInBlacklist`                |                `myBlacklist`                |
+| **status**                                         |               _meInBlacklist_                |                _myBlacklist_                |
 
-#### user1 resubmits friendship request after being added to the blacklist
+#### user1 resubmits friendship request after being added to the blacklist:
 
 |                                                    |                    user 1                    |                    user2                    |
 | :------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                         |               `meInBlacklist`                |                `myBlacklist`                |
+| **status**                                         |               _meInBlacklist_                |                _myBlacklist_                |
 | user1 -> [Friendship request](#friendship-request) |              error: BLACKLISTED              |                                             |
-| **status**                                         |               `meInBlacklist`                |                `myBlacklist`                |
+| **status**                                         |               _meInBlacklist_                |                _myBlacklist_                |
 
-#### user2 removes user1 from blacklist
+#### user2 removes user1 from the blacklist:
 
 |                                                          |                    user 1                    |                    user2                    |
 | :------------------------------------------------------- | :------------------------------------------: | :-----------------------------------------: |
-| **status**                                               |               `meInBlacklist`                |                `myBlacklist`                |
+| **status**                                               |               _meInBlacklist_                |                _myBlacklist_                |
 | user2 -> [Remove from blacklist](#remove-from-blacklist) |                 response: OK                 |                                             |
-| **status**                                               |                     `-`                      |                     `-`                     |
+| **status**                                               |                     _-_                      |                     _-_                     |

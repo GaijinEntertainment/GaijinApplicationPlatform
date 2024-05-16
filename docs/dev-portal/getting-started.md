@@ -6,9 +6,9 @@ title: Getting Started
 
 ## Login
 
-First of all you must login to the Dev Portal(https://dev-portal-next.gaijin.net) using account that has some roles in the Dev Portal service.
+First of all you must login to the [Dev Portal](https://dev-portal-next.gaijin.net) using account that has some roles in the Dev Portal service.
 ![Choose the game](./gui/images/login.png)
-If you don’t have any account, please [create new one](/#requirements).
+If you don’t have any account, please [create new one](#requirements).
 To connect Dev Portal as service read [how to connect services and set user roles](../newcomers-guide/services.md).
 
 ## Main menu

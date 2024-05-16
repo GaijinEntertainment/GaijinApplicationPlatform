@@ -8,7 +8,7 @@ Most modern game use players achievements. The achievement can be simple, like k
 In our services, player achievements are implemented as unlocks. [Player statistics](stats-config-format.md) are used to open unlocks.
 
 This article describes the format of unlocks config and provides examples of simple and complex unlocks.
-You can read about using unlocks in your game here: [Userstat Api](../services-api/userstat-api.md#userstat-api).
+You can read about using unlocks in your game here: [Userstat Api](../services-api/userstat-api.md).
 
 ## Unlocks format
 
@@ -34,7 +34,7 @@ To use and store an unlock you need to add its description to [unlocks config](.
   "dynamicRewards": false,           // optional, default = false
   "showForAll": false,               // optional, default = false
   "requirement": "",                 // optional
-  "meta": {},                        // optional
+  "meta": {}                         // optional
 }
 ```
 
@@ -42,9 +42,9 @@ To use and store an unlock you need to add its description to [unlocks config](.
 
 - `name` (_string_) - name of the unlock, must be unique.
 - `type` (_string_) - type of the unlock, possible values:
-  - "NORMAL" - simple unlock. [Example](#simple-unlocks)
-  - "SESSIONAL" - unlock progress is calculated using statistics of a single session. This type of unlock opens only _once_. [Example](#sessional-unlocks).
-  - "MULTISESSIONAL" - unlock works as SESSIONAL but it can be opened _multiple_ times. [Example](#multisessional-unlocks).
+    - "NORMAL" - simple unlock. [Example](#simple-unlocks)
+    - "SESSIONAL" - unlock progress is calculated using statistics of a single session. This type of unlock opens only _once_. [Example](#sessional-unlocks).
+    - "MULTISESSIONAL" - unlock works as SESSIONAL but it can be opened _multiple_ times. [Example](#multisessional-unlocks).
 - `table` (_string_) - The name of the table for calculating the unlock condition. See [Statistic tables](tables-config-format.md).
 - `condition` (_string_) - a [quirrel](https://quirrel.io/doc/index.html) language expression used to calculate the unlock progress. The format is equivalent to [stats condition](stats-config-format.md#condition-format).
 - `stages` (_json array_) - array of unlock stages. An unlock must have at least one stage but may have more. See [stage description format](#stages-format).
@@ -78,7 +78,7 @@ Each stage has:
     "progress" : 10
   },
   {
-    "progress" : 20
+    "progress" : 20,
     "updStats" :
     [
       {
@@ -96,7 +96,7 @@ Each stage has:
     ]
   },
   {
-    "progress" : 30
+    "progress" : 30,
     "updStats" :
     [
       {

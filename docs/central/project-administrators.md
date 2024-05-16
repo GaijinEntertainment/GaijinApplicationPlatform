@@ -10,13 +10,10 @@ There are currently two project roles: **Owner** and **Administrator**. A projec
 
 ![Project owners and administrators](./assets/project-admins.png)
 
-## Add administrators {#add-administrators}
+## Add administrators
 
-:::info
-
-For security reasons, to add administrator to the project, it is necessary for him to have two-factor authorization (2FA) enabled with the code generator application.
-
-:::
+!!!note
+    For security reasons, to add administrator to the project, it is necessary for him to have two-factor authorization (2FA) enabled with the code generator application.
 
 The **Add administrator** button will open a modal window with **User ID** field. If the user is successfully found, the information about him will be displayed below and the **Continue** button will become active.
 
@@ -26,6 +23,5 @@ When the user has been selected, you will be prompted to specify his **display n
 
 ![Add administrator to apps](./assets/project-admins-grant.png)
 
-:::tip
-Many users use nicknames in their accounts. Use the possibility of changing a user’s Display Name so as not to get confused about who is who.
-:::
+!!!top
+    Many users use nicknames in their accounts. Use the possibility of changing a user’s Display Name so as not to get confused about who is who.

@@ -18,6 +18,5 @@ The page contains common information about user:
 
 You can also upload or delete your avatar.
 
-:::info
-Project owners and administrators can specify a custom display name within a particular project. This action does not affect your profile.
-:::
+!!!note
+    Project owners and administrators can specify a custom display name within a particular project. This action does not affect your profile.
