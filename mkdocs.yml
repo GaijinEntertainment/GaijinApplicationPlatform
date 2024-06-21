@@ -46,7 +46,6 @@ nav:
     - 'central/services.md'
     - 'central/user-profile.md'
     - 'central/logging.md'
-  - 'Gaijin Store and Auth': '/projects/yuplay/en/latest/'
   - 'Best practices':
     - 'best_practices/JWT_security.md'
   - 'how-to-contribute.md'
